@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
 import { HeroCanvas } from './HeroCanvas';
 import { MagneticButton } from './MagneticButton';
-import { FileText, ChevronRight, ArrowDown } from 'lucide-react';
+import { FileText, ChevronRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -53,24 +53,24 @@ export const Hero: React.FC = () => {
       {/* 3D Interactive WebGL Canvas */}
       <HeroCanvas />
 
-      {/* Top Status Capsule */}
+      {/* Top Status Capsule (JetBrains Mono) */}
       <div className="hero-fade-item relative z-10 mx-auto mb-6">
-        <div className="inline-flex items-center gap-2.5 rounded-full glass-pill px-4 py-1.5 shadow-lg border-white/10 hover:border-white/20 transition-all">
+        <div className="inline-flex items-center gap-2.5 rounded-full glass-pill px-4 py-1.5 shadow-lg border-white/10 hover:border-white/20 transition-all font-mono text-xs">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-apple-emerald opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-apple-emerald" />
           </span>
-          <span className="text-xs md:text-sm font-medium text-white/85">
+          <span className="text-white/85">
             {PORTFOLIO_CONFIG.profile.availability}
           </span>
         </div>
       </div>
 
-      {/* Center Cinematic Headline */}
+      {/* Center Cinematic Headline (Montserrat Display) */}
       <div className="relative z-10 mx-auto max-w-5xl text-center my-auto flex flex-col items-center">
         <h1
           ref={headlineRef}
-          className="fluid-hero font-bold tracking-tighter text-white select-none max-w-4xl"
+          className="font-display fluid-hero font-extrabold tracking-[-0.035em] text-white select-none max-w-4xl"
         >
           <span className="mask-line-container block">
             <span className="hero-mask-line block text-white drop-shadow-sm">
@@ -84,16 +84,16 @@ export const Hero: React.FC = () => {
           </span>
         </h1>
 
-        {/* Positioning Paragraph */}
-        <p className="hero-fade-item mt-6 md:mt-8 max-w-2xl text-base md:text-xl font-normal leading-relaxed text-white/70">
+        {/* Positioning Paragraph (Inter Body) */}
+        <p className="hero-fade-item font-sans mt-6 md:mt-8 max-w-2xl text-base md:text-xl font-normal leading-relaxed text-white/70">
           <strong className="text-white font-medium">{PORTFOLIO_CONFIG.profile.name}</strong> &mdash; {PORTFOLIO_CONFIG.profile.tagline}{' '}
-          <span className="text-white/45 block sm:inline mt-1 sm:mt-0">
+          <span className="text-white/45 block sm:inline mt-1 sm:mt-0 font-normal">
             Final-year Computer Science candidate building resilient AI, maternal telemetry, and offline-first distributed systems.
           </span>
         </p>
 
-        {/* Action Magnetic Buttons */}
-        <div className="hero-fade-item mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4">
+        {/* Action Magnetic Buttons (Inter Semi-Bold) */}
+        <div className="hero-fade-item mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4 font-sans">
           <MagneticButton href="#projects" strength={0.25} dataCursor="pointer">
             <span className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black hover:bg-apple-light shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
               Explore Selected Work
@@ -110,11 +110,11 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Scroll Cue */}
+      {/* Bottom Scroll Cue (JetBrains Mono) */}
       <div className="hero-fade-item relative z-10 flex flex-col items-center justify-center pt-8">
         <a
           href="#statement"
-          className="group flex flex-col items-center gap-2 text-xs tracking-widest uppercase text-white/40 hover:text-white/80 transition-colors no-underline"
+          className="group flex flex-col items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-white/40 hover:text-white/80 transition-colors no-underline"
           aria-label="Scroll to explore"
         >
           <span>Scroll to explore</span>

@@ -60,22 +60,22 @@ export const Navigation: React.FC = () => {
               : 'bg-black/35 backdrop-blur-md border border-white/[0.08]'
           }`}
         >
-          {/* Brand Monogram */}
+          {/* Brand Monogram & Name (Montserrat Display) */}
           <a
             href="#"
-            className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white group no-underline"
+            className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white group no-underline font-display"
             onClick={playClickSound}
           >
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] font-bold text-white tracking-tight transition-transform group-hover:scale-105 border border-white/20">
               {PORTFOLIO_CONFIG.profile.monogram}
             </span>
-            <span className="hidden sm:inline font-medium text-white/90 group-hover:text-white transition-colors">
+            <span className="hidden sm:inline font-semibold text-white/90 group-hover:text-white transition-colors">
               {PORTFOLIO_CONFIG.profile.name}
             </span>
           </a>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop Nav Links (Inter) */}
+          <div className="hidden md:flex items-center gap-1 font-sans">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -90,7 +90,7 @@ export const Navigation: React.FC = () => {
 
           {/* Right Utility: Time Pill + Audio + CTA */}
           <div className="flex items-center gap-2 md:gap-3">
-            {/* Accra Clock Pill */}
+            {/* Accra Clock Pill (JetBrains Mono) */}
             <div className="hidden lg:flex items-center gap-2 rounded-full bg-white/[0.04] px-3 py-1 border border-white/[0.06] text-[11px] text-white/60 font-mono">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-apple-emerald animate-pulse" />
               <span>Accra {accraTime || '11:00 AM'}</span>
@@ -105,8 +105,8 @@ export const Navigation: React.FC = () => {
               {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} className="text-apple-azure" />}
             </button>
 
-            {/* Magnetic CTA Button */}
-            <div className="hidden sm:block">
+            {/* Magnetic CTA Button (Inter) */}
+            <div className="hidden sm:block font-sans">
               <MagneticButton href="#contact" strength={0.3}>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-1.5 text-xs font-semibold hover:bg-apple-light hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all">
                   Let&apos;s Connect
@@ -148,7 +148,7 @@ export const Navigation: React.FC = () => {
                   playClickSound();
                   setMobileMenuOpen(false);
                 }}
-                className="py-2 text-lg font-medium text-white/80 hover:text-white border-b border-white/[0.06]"
+                className="py-2 text-lg font-medium text-white/80 hover:text-white border-b border-white/[0.06] font-sans"
               >
                 {link.label}
               </a>
@@ -163,7 +163,7 @@ export const Navigation: React.FC = () => {
                   playClickSound();
                   setMobileMenuOpen(false);
                 }}
-                className="w-full rounded-full bg-white py-3 text-center text-sm font-semibold text-black"
+                className="w-full rounded-full bg-white py-3 text-center text-sm font-semibold text-black font-sans"
               >
                 Let&apos;s Connect
               </a>

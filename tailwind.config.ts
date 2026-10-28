@@ -29,21 +29,17 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: [
-          '-apple-system',
-          'BlinkMacSystemFont',
-          '"SF Pro Display"',
-          '"SF Pro Text"',
-          '"Inter"',
-          'system-ui',
-          'sans-serif',
-        ],
-        mono: ['"SF Mono"', 'ui-monospace', 'Menlo', 'monospace'],
+        display: ['var(--font-montserrat)', 'Montserrat', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['var(--font-mono)', '"JetBrains Mono"', '"SF Mono"', 'ui-monospace', 'monospace'],
       },
       letterSpacing: {
-        tighter: '-0.05em',
-        tight: '-0.03em',
+        tighter: '-0.04em',
+        tight: '-0.025em',
         snug: '-0.015em',
+        wide: '0.04em',
+        wider: '0.08em',
+        widest: '0.16em',
       },
       boxShadow: {
         'glass-edge': '0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 50px rgba(0, 0, 0, 0.6)',
@@ -67,4 +63,3 @@ const config: Config = {
 };
 
 export default config;
-

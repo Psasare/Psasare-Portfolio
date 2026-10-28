@@ -62,16 +62,16 @@ export const IntroStatement: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
-        {/* Apple Subtitle Pill */}
+        {/* Subtitle Pill (JetBrains Mono) */}
         <div className="mb-6 inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-glow">
           <span className="h-1.5 w-1.5 rounded-full bg-apple-azure" />
           CORE ENGINEERING CREED
         </div>
 
-        {/* Word-by-Word Scrubbed Paragraph */}
+        {/* Word-by-Word Scrubbed Paragraph (Montserrat Display) */}
         <p
           ref={textRef}
-          className="fluid-statement font-medium tracking-tight leading-[1.3] text-white/20 select-none"
+          className="font-display fluid-statement font-semibold tracking-[-0.025em] leading-[1.3] text-white/20 select-none"
         >
           {words.map((word, index) => (
             <span key={index} className="statement-word inline-block mr-[0.28em] transition-all will-change-[opacity,transform,filter]">
@@ -80,10 +80,10 @@ export const IntroStatement: React.FC = () => {
           ))}
         </p>
 
-        {/* Context Signature */}
-        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/40">
+        {/* Context Signature (Inter + JetBrains Mono) */}
+        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/40 font-sans">
           <span className="h-px w-10 bg-white/20" />
-          <span>{PORTFOLIO_CONFIG.profile.name} · {PORTFOLIO_CONFIG.profile.location}</span>
+          <span>{PORTFOLIO_CONFIG.profile.name} · <span className="font-mono text-xs">{PORTFOLIO_CONFIG.profile.location}</span></span>
           <span className="h-px w-10 bg-white/20" />
         </div>
       </div>
