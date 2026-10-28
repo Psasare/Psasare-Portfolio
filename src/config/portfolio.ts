@@ -69,7 +69,7 @@ export const PORTFOLIO_CONFIG = {
     timezone: 'Africa/Accra',
     email: 'prosper@psasare.dev',
     altEmail: 'psasare.dev@gmail.com',
-    availability: 'Available for high-impact software engineering roles & research fellowships · Class of 2026',
+    availability: 'Available for high-impact software engineering roles & research fellowships',
     social: {
       github: 'https://github.com/psasare',
       linkedin: 'https://linkedin.com/in/psasare',

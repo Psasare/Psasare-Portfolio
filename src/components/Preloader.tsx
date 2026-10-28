@@ -51,7 +51,7 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
           <div className="flex items-center justify-between text-xs tracking-widest uppercase text-white/40">
             <div className="flex items-center gap-2">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-apple-emerald animate-pulse" />
-              <span>ENGINEERING PORTFOLIO // CLASS OF 2026</span>
+              <span>ENGINEERING PORTFOLIO // SELECTED WORK</span>
             </div>
             <span className="font-mono">{progress.toString().padStart(3, '0')}%</span>
           </div>

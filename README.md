@@ -137,7 +137,7 @@ profile: {
   tagline: 'I engineer software that solves real problems in Ghana.',
   email: 'your.email@example.com',
   location: 'Accra, Ghana',
-  availability: 'Available for full-time engineering roles · Class of 2026',
+  availability: 'Available for full-time engineering roles',
   social: {
     github: 'https://github.com/yourhandle',
     linkedin: 'https://linkedin.com/in/yourhandle',
