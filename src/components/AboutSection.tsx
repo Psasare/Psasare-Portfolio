@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
-import { GraduationCap, Award, MapPin, Terminal, Code2, ArrowUpRight } from 'lucide-react';
-import { MagneticButton } from './MagneticButton';
+import { GraduationCap, Award, MapPin, Terminal, Code2 } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(PORTFOLIO_CONFIG.skills[0].category);
@@ -16,7 +15,7 @@ export const AboutSection: React.FC = () => {
         <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-glow mb-4">
             <Terminal size={14} className="text-apple-azure" />
-            <span>ABOUT // BACKGROUND &amp; SKILLS</span>
+            <span>BACKGROUND &amp; SKILLS</span>
           </div>
           <h2 className="fluid-section-title font-bold tracking-tight text-white">
             Driven by curiosity. Grounded by purpose.
@@ -61,7 +60,7 @@ export const AboutSection: React.FC = () => {
                 <h4 className="text-base font-semibold text-white">National Healthtech Hackathon</h4>
                 <p className="text-xs text-white/60 mt-1">1st Place Winner (Maternal Telemetry System)</p>
                 <span className="inline-block mt-2 text-[11px] font-mono text-apple-glow bg-apple-azure/10 px-2 py-0.5 rounded">
-                  Featured in Tech In Africa &apos;25
+                  Final-Year Capstone Honors
                 </span>
               </div>
             </div>
@@ -74,8 +73,8 @@ export const AboutSection: React.FC = () => {
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-apple-azure via-blue-600 to-cyan-400 p-[2px] shadow-lg">
-                    <div className="h-full w-full rounded-2xl bg-[#09090d] flex items-center justify-center font-bold text-white text-lg">
-                      KA
+                    <div className="h-full w-full rounded-2xl bg-[#09090d] flex items-center justify-center font-bold text-white text-sm tracking-tight">
+                      {PORTFOLIO_CONFIG.profile.monogram}
                     </div>
                   </div>
                   <div>
@@ -88,7 +87,7 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div className="text-right">
-                  <span className="text-[10px] font-mono uppercase text-white/40 block">CURRENT STATUS</span>
+                  <span className="text-[10px] font-mono uppercase text-white/40 block">STATUS</span>
                   <span className="text-xs font-semibold text-apple-emerald">Available Q1 2026</span>
                 </div>
               </div>
@@ -104,8 +103,8 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div className="pt-2 flex justify-between items-center text-xs text-white/40 font-mono">
-                <span>TERMINAL IDENTITY: VERIFIED</span>
-                <span className="text-apple-glow">GH-ENGINEER-2026</span>
+                <span>IDENTITY: VERIFIED</span>
+                <span className="text-apple-glow">PSASARE-GH-2026</span>
               </div>
             </div>
 
@@ -159,4 +158,3 @@ export const AboutSection: React.FC = () => {
     </section>
   );
 };
-

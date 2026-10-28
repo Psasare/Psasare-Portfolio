@@ -13,7 +13,7 @@ export const Navigation: React.FC = () => {
   const [accraTime, setAccraTime] = useState('');
   const { isMuted, toggleSound, playClickSound } = useSound();
 
-  // Accra Time Clock (UTC+0)
+  // Real-time Accra Time Clock (UTC+0)
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -56,8 +56,8 @@ export const Navigation: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className={`pointer-events-auto flex items-center justify-between gap-4 md:gap-8 rounded-full px-5 py-2.5 transition-all duration-500 ${
             scrolled
-              ? 'glass-pill shadow-[0_12px_32px_rgba(0,0,0,0.65)] border-white/[0.12] bg-[#0c0c11]/80'
-              : 'bg-black/30 backdrop-blur-md border border-white/[0.06]'
+              ? 'glass-pill shadow-[0_12px_32px_rgba(0,0,0,0.65)] border-white/[0.12] bg-[#0c0c11]/85'
+              : 'bg-black/35 backdrop-blur-md border border-white/[0.08]'
           }`}
         >
           {/* Brand Monogram */}
@@ -66,8 +66,8 @@ export const Navigation: React.FC = () => {
             className="flex items-center gap-2.5 text-sm font-semibold tracking-tight text-white group no-underline"
             onClick={playClickSound}
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-xs font-bold text-white transition-transform group-hover:scale-105 border border-white/20">
-              KA
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[11px] font-bold text-white tracking-tight transition-transform group-hover:scale-105 border border-white/20">
+              {PORTFOLIO_CONFIG.profile.monogram}
             </span>
             <span className="hidden sm:inline font-medium text-white/90 group-hover:text-white transition-colors">
               {PORTFOLIO_CONFIG.profile.name}
@@ -93,13 +93,13 @@ export const Navigation: React.FC = () => {
             {/* Accra Clock Pill */}
             <div className="hidden lg:flex items-center gap-2 rounded-full bg-white/[0.04] px-3 py-1 border border-white/[0.06] text-[11px] text-white/60 font-mono">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-apple-emerald animate-pulse" />
-              <span>Accra {accraTime || '10:30 AM'}</span>
+              <span>Accra {accraTime || '11:00 AM'}</span>
             </div>
 
             {/* Sound Toggle */}
             <button
               onClick={toggleSound}
-              aria-label={isMuted ? 'Unmute interactive sounds' : 'Mute sounds'}
+              aria-label={isMuted ? 'Unmute interactive haptics' : 'Mute haptics'}
               className="flex h-8 w-8 items-center justify-center rounded-full bg-white/[0.05] text-white/70 hover:text-white hover:bg-white/[0.12] transition-colors border border-white/[0.08]"
             >
               {isMuted ? <VolumeX size={14} /> : <Volume2 size={14} className="text-apple-azure" />}
@@ -109,7 +109,7 @@ export const Navigation: React.FC = () => {
             <div className="hidden sm:block">
               <MagneticButton href="#contact" strength={0.3}>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white text-black px-4 py-1.5 text-xs font-semibold hover:bg-apple-light hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all">
-                  Let&apos;s Talk
+                  Let&apos;s Connect
                   <ArrowUpRight size={13} />
                 </span>
               </MagneticButton>
@@ -155,7 +155,7 @@ export const Navigation: React.FC = () => {
             ))}
             <div className="pt-2 flex flex-col items-center gap-3">
               <span className="text-xs text-white/50 font-mono">
-                ACCRA (GMT) // {accraTime || '10:30 AM'}
+                ACCRA (GMT) // {accraTime || '11:00 AM'}
               </span>
               <a
                 href="#contact"
@@ -174,4 +174,3 @@ export const Navigation: React.FC = () => {
     </>
   );
 };
-

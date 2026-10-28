@@ -8,9 +8,9 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
-    // Elegant countdown ticker under 1.6s
+    // Smooth countdown ticker under 1.5s
     const startTime = performance.now();
-    const duration = 1500; // 1.5 seconds
+    const duration = 1400; // 1.4 seconds
 
     const updateCounter = (currentTime: number) => {
       const elapsed = currentTime - startTime;
@@ -25,8 +25,8 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
           setIsDone(true);
           setTimeout(() => {
             onComplete();
-          }, 850);
-        }, 200);
+          }, 800);
+        }, 180);
       }
     };
 
@@ -51,7 +51,7 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
           <div className="flex items-center justify-between text-xs tracking-widest uppercase text-white/40">
             <div className="flex items-center gap-2">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-apple-emerald animate-pulse" />
-              <span>PORTFOLIO // CLASS OF 2026</span>
+              <span>ENGINEERING PORTFOLIO // CLASS OF 2026</span>
             </div>
             <span className="font-mono">{progress.toString().padStart(3, '0')}%</span>
           </div>
@@ -67,9 +67,9 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
                   ease: [0.16, 1, 0.3, 1],
                   delay: 0.1,
                 }}
-                className="text-4xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center bg-gradient-to-b from-white via-white/90 to-white/50 bg-clip-text text-transparent"
+                className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-center bg-gradient-to-b from-white via-white/95 to-white/60 bg-clip-text text-transparent"
               >
-                KWAME ASARE
+                PROSPER SHAIBU ASARE
               </motion.h1>
             </div>
 
@@ -80,11 +80,11 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
                 transition={{
                   duration: 0.8,
                   ease: [0.16, 1, 0.3, 1],
-                  delay: 0.3,
+                  delay: 0.25,
                 }}
                 className="text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 text-center font-mono"
               >
-                CRAFTING CALM & RESILIENT SOFTWARE · ACCRA
+                CRAFTING CALM &amp; RESILIENT SOFTWARE · ACCRA
               </motion.p>
             </div>
           </div>
@@ -99,7 +99,7 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
               />
             </div>
             <div className="mt-3 flex justify-between text-[11px] font-mono text-white/30">
-              <span>INITIALIZING SYSTEM TOKENS</span>
+              <span>SYSTEM TOKENS INITIALIZED</span>
               <span>60 FPS SMOOTH ENGINE</span>
             </div>
           </div>
@@ -108,4 +108,3 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
     </AnimatePresence>
   );
 };
-

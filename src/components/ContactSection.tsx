@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
 import { MagneticButton } from './MagneticButton';
-import { ArrowUpRight, Copy, Check, Github, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { ArrowUpRight, Copy, Check, Github, Linkedin, Twitter, ArrowUp, Mail } from 'lucide-react';
 import { useSound } from './SoundEffects';
 
 export const ContactSection: React.FC = () => {
@@ -41,7 +41,7 @@ export const ContactSection: React.FC = () => {
           </h2>
 
           <p className="mt-4 text-base md:text-xl text-white/50 max-w-xl">
-            Currently accepting engineering interviews, graduate research fellowships, and high-impact software contracts.
+            Currently accepting software engineering interviews, graduate research fellowships, and high-impact software contracts.
           </p>
 
           {/* Huge Magnetic Email Link */}
@@ -54,22 +54,32 @@ export const ContactSection: React.FC = () => {
             </MagneticButton>
 
             {/* Quick Copy Pill */}
-            <button
-              onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 px-4 py-2 text-xs font-mono text-white/70 hover:text-white transition-all shadow-sm"
-            >
-              {copied ? (
-                <>
-                  <Check size={14} className="text-apple-emerald" />
-                  <span className="text-apple-emerald font-semibold">COPIED TO CLIPBOARD</span>
-                </>
-              ) : (
-                <>
-                  <Copy size={14} />
-                  <span>CLICK TO COPY ADDRESS</span>
-                </>
-              )}
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleCopyEmail}
+                className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 px-4 py-2 text-xs font-mono text-white/70 hover:text-white transition-all shadow-sm"
+              >
+                {copied ? (
+                  <>
+                    <Check size={14} className="text-apple-emerald" />
+                    <span className="text-apple-emerald font-semibold">COPIED TO CLIPBOARD</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy size={14} />
+                    <span>COPY EMAIL ADDRESS</span>
+                  </>
+                )}
+              </button>
+
+              <a
+                href={`mailto:${PORTFOLIO_CONFIG.profile.altEmail}`}
+                className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] px-3 py-2 text-xs font-mono text-white/50 hover:text-white/80 transition-all no-underline"
+              >
+                <Mail size={12} />
+                <span>Backup: {PORTFOLIO_CONFIG.profile.altEmail}</span>
+              </a>
+            </div>
           </div>
 
           {/* Social Links */}
@@ -109,7 +119,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-6">
-            <span>DESIGNED WITH SURGICAL RESTRAINT</span>
+            <span>ENGINEERED WITH SURGICAL RESTRAINT</span>
             <button
               onClick={scrollToTop}
               className="flex items-center gap-1.5 text-white/60 hover:text-white transition-colors"
@@ -124,4 +134,3 @@ export const ContactSection: React.FC = () => {
     </footer>
   );
 };
-

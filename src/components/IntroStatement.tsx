@@ -83,11 +83,10 @@ export const IntroStatement: React.FC = () => {
         {/* Context Signature */}
         <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/40">
           <span className="h-px w-10 bg-white/20" />
-          <span>Kwame Asare · Accra, Ghana</span>
+          <span>{PORTFOLIO_CONFIG.profile.name} · {PORTFOLIO_CONFIG.profile.location}</span>
           <span className="h-px w-10 bg-white/20" />
         </div>
       </div>
     </section>
   );
 };
-

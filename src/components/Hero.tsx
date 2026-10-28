@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
 import { HeroCanvas } from './HeroCanvas';
 import { MagneticButton } from './MagneticButton';
-import { ArrowDown, Sparkles, FileText, ChevronRight } from 'lucide-react';
+import { FileText, ChevronRight, ArrowDown } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
           duration: 1.15,
           stagger: 0.12,
           ease: 'power3.out',
-          delay: 0.25,
+          delay: 0.2,
         }
       );
 
@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
           duration: 0.9,
           stagger: 0.1,
           ease: 'power3.out',
-          delay: 0.65,
+          delay: 0.55,
         }
       );
     }, containerRef);
@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-apple-emerald opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-apple-emerald" />
           </span>
-          <span className="text-xs md:text-sm font-medium text-white/80">
+          <span className="text-xs md:text-sm font-medium text-white/85">
             {PORTFOLIO_CONFIG.profile.availability}
           </span>
         </div>
@@ -73,22 +73,22 @@ export const Hero: React.FC = () => {
           className="fluid-hero font-bold tracking-tighter text-white select-none max-w-4xl"
         >
           <span className="mask-line-container block">
-            <span className="hero-mask-line block bg-gradient-to-b from-white via-white to-white/70 bg-clip-text text-transparent">
+            <span className="hero-mask-line block text-white drop-shadow-sm">
               Software built for
             </span>
           </span>
           <span className="mask-line-container block">
-            <span className="hero-mask-line block bg-gradient-to-r from-white via-apple-glow to-blue-400 bg-clip-text text-transparent">
+            <span className="hero-mask-line block text-white/90">
               the real world.
             </span>
           </span>
         </h1>
 
         {/* Positioning Paragraph */}
-        <p className="hero-fade-item mt-6 md:mt-8 max-w-2xl text-base md:text-xl font-normal leading-relaxed text-white/60">
-          {PORTFOLIO_CONFIG.profile.tagline}{' '}
-          <span className="text-white/40 block sm:inline mt-1 sm:mt-0">
-            Final-year Computer Science candidate crafting resilient AI, healthcare telemetry, and offline-first systems.
+        <p className="hero-fade-item mt-6 md:mt-8 max-w-2xl text-base md:text-xl font-normal leading-relaxed text-white/70">
+          <strong className="text-white font-medium">{PORTFOLIO_CONFIG.profile.name}</strong> &mdash; {PORTFOLIO_CONFIG.profile.tagline}{' '}
+          <span className="text-white/45 block sm:inline mt-1 sm:mt-0">
+            Final-year Computer Science candidate building resilient AI, maternal telemetry, and offline-first distributed systems.
           </span>
         </p>
 
@@ -130,4 +130,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-

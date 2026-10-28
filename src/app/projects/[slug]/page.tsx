@@ -21,7 +21,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   if (!project) {
     return {
-      title: 'Project Not Found — Kwame Asare',
+      title: `Project Not Found — ${PORTFOLIO_CONFIG.profile.name}`,
     };
   }
 
@@ -31,7 +31,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
     openGraph: {
       title: `${project.title} — ${project.category}`,
       description: project.summary,
-      url: `https://asaredesign.dev/projects/${project.slug}`,
+      url: `https://psasare.dev/projects/${project.slug}`,
     },
   };
 }
