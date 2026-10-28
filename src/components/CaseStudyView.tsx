@@ -29,7 +29,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
   }, [slug]);
 
   return (
-    <div className="relative min-h-screen bg-[#070709] text-white selection:bg-apple-azure selection:text-white">
+    <div className="relative min-h-screen bg-[#070709] text-white selection:bg-apple-azure selection:text-white font-sans">
       <CustomCursor />
       <Navigation />
 
@@ -42,37 +42,37 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
         />
 
         <div className="max-w-7xl mx-auto">
-          {/* Back Navigation Breadcrumb */}
+          {/* Back Navigation Breadcrumb (JetBrains Mono) */}
           <motion.div
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-8"
+            className="mb-8 font-mono"
           >
             <Link
               href="/#projects"
-              className="inline-flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white transition-colors uppercase tracking-widest no-underline"
+              className="inline-flex items-center gap-2 text-xs text-white/50 hover:text-white transition-colors uppercase tracking-widest no-underline"
             >
               <ArrowLeft size={14} />
               <span>BACK TO SELECTED WORK</span>
             </Link>
           </motion.div>
 
-          {/* Project Title Block */}
+          {/* Project Title Block (Montserrat Display) */}
           <div className="max-w-4xl">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="font-mono text-xs uppercase tracking-widest text-apple-glow">
-                CASE STUDY // {project.category}
+            <div className="flex items-center gap-3 mb-4 font-mono text-xs">
+              <span className="uppercase tracking-widest text-apple-glow font-medium">
+                {project.category}
               </span>
               <span className="h-1 w-1 rounded-full bg-white/40" />
-              <span className="text-xs font-mono text-white/50">{project.year}</span>
+              <span className="text-white/50">{project.year}</span>
             </div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
+              className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white"
             >
               {project.title}
             </motion.h1>
@@ -81,7 +81,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-6 text-xl md:text-2xl text-white/70 font-normal leading-relaxed"
+              className="font-sans mt-6 text-xl md:text-2xl text-white/70 font-normal leading-relaxed"
             >
               {project.summary}
             </motion.p>
@@ -102,7 +102,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
       {/* Main Content Layout: Sticky Sidebar + Deep Dive Narrative */}
       <section className="relative max-w-7xl mx-auto px-6 md:px-14 lg:px-20 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Sticky Sidebar: Metadata */}
+          {/* Sticky Sidebar: Metadata (JetBrains Mono & Inter) */}
           <aside className="lg:col-span-4">
             <div className="lg:sticky lg:top-28 flex flex-col gap-6 rounded-3xl glass-panel p-6 border-white/10">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-glow pb-3 border-b border-white/[0.08]">
@@ -111,26 +111,26 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
 
               <div>
                 <span className="text-xs text-white/40 font-mono uppercase block">MY ROLE</span>
-                <span className="text-sm font-semibold text-white mt-1 block">{project.role}</span>
+                <span className="text-sm font-semibold text-white mt-1 block font-sans">{project.role}</span>
               </div>
 
               <div>
                 <span className="text-xs text-white/40 font-mono uppercase block">TIMELINE</span>
-                <span className="text-sm font-semibold text-white mt-1 block">{project.timeline}</span>
+                <span className="text-sm font-semibold text-white mt-1 block font-sans">{project.timeline}</span>
               </div>
 
               <div>
                 <span className="text-xs text-white/40 font-mono uppercase block">CONTEXT / SPONSOR</span>
-                <span className="text-sm font-semibold text-white mt-1 block">{project.clientOrContext}</span>
+                <span className="text-sm font-semibold text-white mt-1 block font-sans">{project.clientOrContext}</span>
               </div>
 
               <div>
                 <span className="text-xs text-white/40 font-mono uppercase block mb-2">TECH ARSENAL</span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 font-mono">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs rounded-full bg-white/[0.06] border border-white/10 px-3 py-1 font-mono text-white/80"
+                      className="text-xs rounded-full bg-white/[0.06] border border-white/10 px-3 py-1 text-white/80"
                     >
                       {tech}
                     </span>
@@ -139,7 +139,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
               </div>
 
               {/* Action Links */}
-              <div className="pt-4 border-t border-white/[0.08] flex flex-col gap-2">
+              <div className="pt-4 border-t border-white/[0.08] flex flex-col gap-2 font-sans">
                 {project.links.live && (
                   <a
                     href={project.links.live}
@@ -167,13 +167,13 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
           </aside>
 
           {/* Right Column: Deep Dive Narrative */}
-          <main className="lg:col-span-8 flex flex-col gap-16">
+          <main className="lg:col-span-8 flex flex-col gap-16 font-sans">
             {/* 1. Problem Definition */}
             <div>
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-rose-400 mb-2 block">
                 01 // THE CHALLENGE
               </span>
-              <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 {project.problem.title}
               </h2>
               <p className="text-base md:text-lg text-white/70 leading-relaxed font-normal">
@@ -194,7 +194,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-apple-glow mb-2 block">
                 02 // QUANTIFIABLE OUTCOMES
               </span>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">
+              <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-white mb-6">
                 Comparative Performance Delta
               </h2>
               <BeforeAfterSlider project={project} />
@@ -205,7 +205,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-apple-emerald mb-2 block">
                 03 // THE SOLUTION
               </span>
-              <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-white mb-4">
                 {project.solution.title}
               </h2>
               <p className="text-base md:text-lg text-white/70 leading-relaxed font-normal">
@@ -226,12 +226,12 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
               <span className="text-xs font-mono uppercase tracking-[0.25em] text-apple-azure mb-2 block">
                 04 // SYSTEMS ARCHITECTURE
               </span>
-              <h3 className="text-2xl font-bold text-white mb-3">{project.architecture.title}</h3>
+              <h3 className="font-display text-2xl font-bold text-white mb-3">{project.architecture.title}</h3>
               <p className="text-sm md:text-base text-white/60 leading-relaxed">
                 {project.architecture.description}
               </p>
 
-              <div className="mt-6 grid grid-cols-1 gap-3">
+              <div className="mt-6 grid grid-cols-1 gap-3 font-sans">
                 {project.architecture.highlights.map((item, idx) => (
                   <div
                     key={idx}
@@ -248,7 +248,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
       </section>
 
       {/* Next Project Footer Seamless Morph */}
-      <footer className="relative w-full border-t border-white/10 bg-[#09090d] py-24 px-6 md:px-14 lg:px-20 overflow-hidden">
+      <footer className="relative w-full border-t border-white/10 bg-[#09090d] py-24 px-6 md:px-14 lg:px-20 overflow-hidden font-sans">
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
           <span className="text-xs font-mono uppercase tracking-[0.3em] text-white/40 mb-3">
             CONTINUE EXPLORING
@@ -258,14 +258,14 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
           </h3>
 
           <Link href={`/projects/${nextProject.slug}`} className="group no-underline my-8">
-            <h2 className="text-4xl md:text-7xl font-bold tracking-tight text-white group-hover:text-apple-glow transition-colors duration-300">
+            <h2 className="font-display text-4xl md:text-7xl font-extrabold tracking-tight text-white group-hover:text-apple-glow transition-colors duration-300">
               {nextProject.title} →
             </h2>
-            <p className="text-sm md:text-lg text-white/50 mt-2">{nextProject.tagline}</p>
+            <p className="font-sans text-sm md:text-lg text-white/50 mt-2">{nextProject.tagline}</p>
           </Link>
 
           <MagneticButton href={`/projects/${nextProject.slug}`} strength={0.3} dataCursor="view">
-            <span className="inline-flex items-center gap-2 rounded-full glass-panel px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all">
+            <span className="inline-flex items-center gap-2 rounded-full glass-panel px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all font-sans">
               Load Next Chapter
               <ChevronRight size={16} />
             </span>
@@ -275,4 +275,3 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
     </div>
   );
 };
-

@@ -65,24 +65,24 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
         {/* Project Header Info */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-xs font-mono tracking-widest uppercase text-apple-glow font-medium">
+            <div className="flex items-center gap-3 mb-3 font-mono">
+              <span className="text-xs tracking-widest uppercase text-apple-glow font-medium">
                 {project.category}
               </span>
               <span className="h-1 w-1 rounded-full bg-white/40" />
-              <span className="text-xs font-mono text-white/40">{project.year}</span>
+              <span className="text-xs text-white/40">{project.year}</span>
             </div>
 
-            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
               {project.title}
             </h3>
-            <p className="mt-2 text-base md:text-xl text-white/60 max-w-2xl font-normal leading-relaxed">
+            <p className="font-sans mt-2 text-base md:text-xl text-white/60 max-w-2xl font-normal leading-relaxed">
               {project.tagline}
             </p>
           </div>
 
           {/* CTA Link to Case Study */}
-          <div className="shrink-0">
+          <div className="shrink-0 font-sans">
             <Link href={`/projects/${project.slug}`} onClick={playClickSound} className="no-underline">
               <MagneticButton strength={0.3} dataCursor="view">
                 <span
@@ -124,28 +124,28 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
                 <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40 block mb-2">
                   MEASURED IMPACT
                 </span>
-                <p className="text-sm md:text-base text-white/70 leading-relaxed">
+                <p className="font-sans text-sm md:text-base text-white/70 leading-relaxed">
                   {project.summary}
                 </p>
               </div>
 
-              {/* Animated Counters Grid */}
+              {/* Animated Counters Grid (JetBrains Mono) */}
               <div className="grid grid-cols-2 gap-4">
                 {project.metrics.map((metric, i) => (
                   <MetricCard key={i} metric={metric} isInView={isInView} delay={i * 0.1} />
                 ))}
               </div>
 
-              {/* Stack Pills */}
+              {/* Stack Pills (JetBrains Mono) */}
               <div className="pt-2">
                 <span className="text-[11px] font-mono uppercase tracking-wider text-white/40 block mb-2">
                   ENGINEERING STACK
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 font-mono">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs rounded-full bg-white/[0.05] border border-white/[0.08] px-3 py-1 text-white/80 font-mono"
+                      className="text-xs rounded-full bg-white/[0.05] border border-white/[0.08] px-3 py-1 text-white/80"
                     >
                       {tech}
                     </span>
@@ -154,9 +154,9 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
               </div>
 
               {/* Bottom Context Badge */}
-              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-xs text-white/50">
+              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-xs text-white/50 font-mono">
                 <span className="truncate">Role: {project.role}</span>
-                <span className="shrink-0 text-apple-emerald flex items-center gap-1 font-mono">
+                <span className="shrink-0 text-apple-emerald flex items-center gap-1">
                   <CheckCircle2 size={12} /> Production Pilot
                 </span>
               </div>
@@ -169,7 +169,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
 };
 
 /* -------------------------------------------------------------
- * Animated Counter HUD Component
+ * Animated Counter HUD Component (JetBrains Mono)
  * ------------------------------------------------------------- */
 const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: string }; isInView: boolean; delay: number }> = ({
   metric,
@@ -191,7 +191,6 @@ const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: stri
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      // Apple-like smooth cubic ease-out
       const easeProgress = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(easeProgress * rawNumber));
 
@@ -210,14 +209,14 @@ const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: stri
   }, [isInView, rawNumber, isNumeric, delay]);
 
   return (
-    <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-3.5 hover:border-white/20 transition-all">
+    <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-3.5 hover:border-white/20 transition-all font-mono">
       <div className="flex items-baseline gap-1">
-        <span className="text-2xl md:text-3xl font-bold font-mono text-white tracking-tight">
+        <span className="text-2xl md:text-3xl font-bold text-white tracking-tight">
           {isNumeric ? count.toLocaleString() : metric.value}
         </span>
         {metric.unit && <span className="text-sm font-semibold text-apple-glow">{metric.unit}</span>}
       </div>
-      <span className="text-xs text-white/50 block mt-1 leading-tight">{metric.label}</span>
+      <span className="text-xs text-white/50 block mt-1 leading-tight font-sans">{metric.label}</span>
     </div>
   );
 };

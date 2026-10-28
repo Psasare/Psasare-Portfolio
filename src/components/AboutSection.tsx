@@ -17,7 +17,7 @@ export const AboutSection: React.FC = () => {
             <Terminal size={14} className="text-apple-azure" />
             <span>BACKGROUND &amp; SKILLS</span>
           </div>
-          <h2 className="fluid-section-title font-bold tracking-tight text-white">
+          <h2 className="font-display fluid-section-title font-bold tracking-tight text-white">
             Driven by curiosity. Grounded by purpose.
           </h2>
         </div>
@@ -27,11 +27,11 @@ export const AboutSection: React.FC = () => {
           {/* Left Column: Story + Academic Credentials */}
           <div className="lg:col-span-7 flex flex-col gap-8">
             <div className="prose prose-invert max-w-none">
-              <p className="text-xl md:text-2xl font-medium text-white/90 leading-snug">
+              <p className="font-sans text-xl md:text-2xl font-medium text-white/90 leading-snug">
                 {PORTFOLIO_CONFIG.about.lead}
               </p>
 
-              <div className="mt-6 flex flex-col gap-4 text-base text-white/60 leading-relaxed font-normal">
+              <div className="mt-6 flex flex-col gap-4 text-base text-white/65 leading-relaxed font-normal font-sans">
                 {PORTFOLIO_CONFIG.about.storyParagraphs.map((para, i) => (
                   <p key={i}>{para}</p>
                 ))}
@@ -45,8 +45,8 @@ export const AboutSection: React.FC = () => {
                   <GraduationCap size={20} />
                   <span className="text-xs font-mono uppercase tracking-wider text-white/50">EDUCATION</span>
                 </div>
-                <h4 className="text-base font-semibold text-white">BSc Computer Science</h4>
-                <p className="text-xs text-white/60 mt-1">Class of 2026 · Accra, Ghana</p>
+                <h4 className="font-display text-base font-bold text-white">BSc Computer Science</h4>
+                <p className="font-sans text-xs text-white/60 mt-1">Class of 2026 · Accra, Ghana</p>
                 <span className="inline-block mt-2 text-[11px] font-mono text-apple-emerald bg-apple-emerald/10 px-2 py-0.5 rounded">
                   First Class Honours Track
                 </span>
@@ -57,8 +57,8 @@ export const AboutSection: React.FC = () => {
                   <Award size={20} />
                   <span className="text-xs font-mono uppercase tracking-wider text-white/50">RECOGNITION</span>
                 </div>
-                <h4 className="text-base font-semibold text-white">National Healthtech Hackathon</h4>
-                <p className="text-xs text-white/60 mt-1">1st Place Winner (Maternal Telemetry System)</p>
+                <h4 className="font-display text-base font-bold text-white">National Healthtech Hackathon</h4>
+                <p className="font-sans text-xs text-white/60 mt-1">1st Place Winner (Maternal Telemetry System)</p>
                 <span className="inline-block mt-2 text-[11px] font-mono text-apple-glow bg-apple-azure/10 px-2 py-0.5 rounded">
                   Final-Year Capstone Honors
                 </span>
@@ -73,22 +73,22 @@ export const AboutSection: React.FC = () => {
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-apple-azure via-blue-600 to-cyan-400 p-[2px] shadow-lg">
-                    <div className="h-full w-full rounded-2xl bg-[#09090d] flex items-center justify-center font-bold text-white text-sm tracking-tight">
+                    <div className="h-full w-full rounded-2xl bg-[#09090d] flex items-center justify-center font-display font-bold text-white text-sm tracking-tight">
                       {PORTFOLIO_CONFIG.profile.monogram}
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white">{PORTFOLIO_CONFIG.profile.name}</h3>
-                    <p className="text-xs text-white/50 flex items-center gap-1 mt-0.5">
+                    <h3 className="font-display text-base font-bold text-white">{PORTFOLIO_CONFIG.profile.name}</h3>
+                    <p className="font-sans text-xs text-white/50 flex items-center gap-1 mt-0.5">
                       <MapPin size={11} className="text-apple-azure" />
                       {PORTFOLIO_CONFIG.profile.location}
                     </p>
                   </div>
                 </div>
 
-                <div className="text-right">
-                  <span className="text-[10px] font-mono uppercase text-white/40 block">STATUS</span>
-                  <span className="text-xs font-semibold text-apple-emerald">Available Q1 2026</span>
+                <div className="text-right font-mono">
+                  <span className="text-[10px] uppercase text-white/40 block">STATUS</span>
+                  <span className="text-xs font-semibold text-apple-emerald font-sans">Available Q1 2026</span>
                 </div>
               </div>
 
@@ -96,8 +96,8 @@ export const AboutSection: React.FC = () => {
               <div className="grid grid-cols-2 gap-3 my-4">
                 {PORTFOLIO_CONFIG.about.stats.map((stat, i) => (
                   <div key={i} className="rounded-xl bg-white/[0.03] p-3 border border-white/[0.06]">
-                    <span className="text-lg font-bold font-mono text-white block">{stat.value}</span>
-                    <span className="text-[11px] text-white/50 block mt-0.5">{stat.label}</span>
+                    <span className="font-mono text-lg font-bold text-white block">{stat.value}</span>
+                    <span className="font-sans text-[11px] text-white/50 block mt-0.5">{stat.label}</span>
                   </div>
                 ))}
               </div>
@@ -117,8 +117,8 @@ export const AboutSection: React.FC = () => {
                 <span className="text-[10px] text-white/40 font-mono">CLICK CATEGORY</span>
               </div>
 
-              {/* Category Tabs */}
-              <div className="flex flex-wrap gap-1.5 pb-4 border-b border-white/[0.08]">
+              {/* Category Tabs (Inter) */}
+              <div className="flex flex-wrap gap-1.5 pb-4 border-b border-white/[0.08] font-sans">
                 {PORTFOLIO_CONFIG.skills.map((skillGroup) => (
                   <button
                     key={skillGroup.category}
@@ -134,8 +134,8 @@ export const AboutSection: React.FC = () => {
                 ))}
               </div>
 
-              {/* Animated Skill Items */}
-              <div className="pt-4 flex flex-wrap gap-2 min-h-[90px]">
+              {/* Animated Skill Items (JetBrains Mono) */}
+              <div className="pt-4 flex flex-wrap gap-2 min-h-[90px] font-mono">
                 {PORTFOLIO_CONFIG.skills
                   .find((s) => s.category === activeCategory)
                   ?.items.map((item, idx) => (
@@ -144,7 +144,7 @@ export const AboutSection: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.2, delay: idx * 0.03 }}
-                      className="inline-flex items-center gap-1.5 text-xs font-mono rounded-lg bg-white/[0.06] border border-white/10 px-3 py-1.5 text-white/90"
+                      className="inline-flex items-center gap-1.5 text-xs rounded-lg bg-white/[0.06] border border-white/10 px-3 py-1.5 text-white/90"
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-apple-azure" />
                       {item}

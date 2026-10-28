@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Cpu, Wifi, WifiOff, ShieldCheck, Zap, Database, Smartphone, ArrowRight } from 'lucide-react';
+import { Cpu, Wifi, WifiOff, Zap, Database, Smartphone } from 'lucide-react';
 
 export const CapabilitiesGrid: React.FC = () => {
   const [networkMode, setNetworkMode] = useState<'2g' | '5g'>('2g');
@@ -16,10 +16,10 @@ export const CapabilitiesGrid: React.FC = () => {
             <Cpu size={14} className="text-apple-azure" />
             <span>ARCHITECTURAL PHILOSOPHY &amp; SYSTEM SPECS</span>
           </div>
-          <h2 className="fluid-section-title font-bold tracking-tight text-white">
+          <h2 className="font-display fluid-section-title font-bold tracking-tight text-white">
             Engineered for hostile network conditions.
           </h2>
-          <p className="mt-4 text-base md:text-lg text-white/50 leading-relaxed">
+          <p className="font-sans mt-4 text-base md:text-lg text-white/55 leading-relaxed">
             Building software in emerging markets requires rethinking cloud assumptions. Every application I design prioritizes zero-data survivability, local-first data integrity, and extreme UI responsiveness.
           </p>
         </div>
@@ -33,14 +33,14 @@ export const CapabilitiesGrid: React.FC = () => {
                 <span className="text-xs font-mono uppercase tracking-widest text-apple-glow">
                   LIVE ARCHITECTURE SIMULATOR
                 </span>
-                <h3 className="text-2xl font-bold text-white mt-1">Bandwidth Resilience Engine</h3>
+                <h3 className="font-display text-2xl font-bold text-white mt-1">Bandwidth Resilience Engine</h3>
               </div>
 
-              {/* Toggle 2G vs 5G */}
-              <div className="flex rounded-full bg-black/60 p-1 border border-white/10 self-start">
+              {/* Toggle 2G vs 5G (JetBrains Mono) */}
+              <div className="flex rounded-full bg-black/60 p-1 border border-white/10 self-start font-mono">
                 <button
                   onClick={() => setNetworkMode('2g')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all ${
                     networkMode === '2g'
                       ? 'bg-apple-azure text-white shadow-md'
                       : 'text-white/50 hover:text-white'
@@ -51,7 +51,7 @@ export const CapabilitiesGrid: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setNetworkMode('5g')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-mono transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all ${
                     networkMode === '5g'
                       ? 'bg-apple-azure text-white shadow-md'
                       : 'text-white/50 hover:text-white'
@@ -63,7 +63,7 @@ export const CapabilitiesGrid: React.FC = () => {
               </div>
             </div>
 
-            {/* Simulation Comparison Readout */}
+            {/* Simulation Comparison Readout (JetBrains Mono & Inter) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4 p-5 rounded-2xl bg-black/40 border border-white/[0.06]">
               <div>
                 <span className="text-xs text-white/40 font-mono block">INITIAL PAYLOAD SIZE</span>
@@ -92,7 +92,7 @@ export const CapabilitiesGrid: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-xs md:text-sm text-white/60 leading-relaxed mt-2">
+            <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mt-2">
               By pruning runtime bloat, pre-compiling critical routes, and utilizing IndexedDB delta stores, my apps remain 100% interactive even when internet connectivity drops entirely.
             </p>
           </div>
@@ -106,8 +106,8 @@ export const CapabilitiesGrid: React.FC = () => {
               <span className="text-xs font-mono uppercase tracking-widest text-apple-emerald">
                 DATA INTEGRITY
               </span>
-              <h3 className="text-xl font-bold text-white mt-1">Local-First CRDT Sync</h3>
-              <p className="text-xs md:text-sm text-white/60 leading-relaxed mt-3">
+              <h3 className="font-display text-xl font-bold text-white mt-1">Local-First CRDT Sync</h3>
+              <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mt-3">
                 No user action is ever blocked waiting for a server roundtrip. State changes apply immediately to the local device database and resolve conflict-free across intermittent hospital and campus networks.
               </p>
             </div>
@@ -126,8 +126,8 @@ export const CapabilitiesGrid: React.FC = () => {
               <span className="text-xs font-mono uppercase tracking-widest text-apple-glow">
                 EDGE INTELLIGENCE
               </span>
-              <h3 className="text-xl font-bold text-white mt-1">Quantized Edge AI</h3>
-              <p className="text-xs md:text-sm text-white/60 leading-relaxed mt-3">
+              <h3 className="font-display text-xl font-bold text-white mt-1">Quantized Edge AI</h3>
+              <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mt-3">
                 Fine-tuned 4-bit quantized NLP transformers running on low-resource edge servers and mobile clients. Zero student identity or medical PII leaves the client unencrypted.
               </p>
             </div>
@@ -147,13 +147,13 @@ export const CapabilitiesGrid: React.FC = () => {
                 <span className="text-xs font-mono uppercase tracking-widest text-white/50">
                   DESIGN SYSTEM
                 </span>
-                <h3 className="text-xl font-bold text-white mt-1">Calm, Confident Interfaces</h3>
-                <p className="text-xs md:text-sm text-white/60 leading-relaxed mt-3">
+                <h3 className="font-display text-xl font-bold text-white mt-1">Calm, Confident Interfaces</h3>
+                <p className="font-sans text-xs md:text-sm text-white/60 leading-relaxed mt-3">
                   Restraint over decoration. High contrast typography, generous negative space, and butter-smooth 60fps micro-interactions that communicate state clearly to doctors, farmers, and students alike.
                 </p>
               </div>
 
-              <div className="flex flex-col justify-between rounded-2xl bg-black/40 p-5 border border-white/[0.06]">
+              <div className="flex flex-col justify-between rounded-2xl bg-black/40 p-5 border border-white/[0.06] font-sans">
                 <div className="flex flex-col gap-2.5">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-white/50">WCAG 2.2 AAA Contrast</span>
@@ -179,4 +179,3 @@ export const CapabilitiesGrid: React.FC = () => {
     </section>
   );
 };
-
