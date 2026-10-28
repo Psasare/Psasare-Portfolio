@@ -1,7 +1,6 @@
 /**
- * Portfolio Configuration & Motion Settings
- * All animations, typography tokens, project case studies, and personal info
- * are centralized here for easy tuning and customization.
+ * Portfolio Configuration & Design System Tokens
+ * Master source of truth for Prosper Shaibu Asare's portfolio.
  */
 
 export interface Metric {
@@ -59,58 +58,61 @@ export interface Project {
 
 export const PORTFOLIO_CONFIG = {
   profile: {
-    name: 'Kwame Asare',
+    name: 'Prosper Shaibu Asare',
+    shortName: 'Prosper',
+    monogram: 'PSA',
     role: 'Software Engineer & Creative Technologist',
-    tagline: 'I engineer software that solves real problems in Ghana and beyond.',
+    tagline: 'I build software that solves real problems in Ghana.',
     subheadline:
       'Final-year Computer Science candidate. Crafting calm, resilient digital systems at the intersection of AI, healthcare infrastructure, and human dignity.',
     location: 'Accra, Ghana',
     timezone: 'Africa/Accra',
-    email: 'kwame@asaredesign.dev',
-    availability: 'Available for high-impact roles & research fellowships · Class of 2026',
+    email: 'prosper@psasare.dev',
+    altEmail: 'psasare.dev@gmail.com',
+    availability: 'Available for high-impact software engineering roles & research fellowships · Class of 2026',
     social: {
-      github: 'https://github.com/kwameasare',
-      linkedin: 'https://linkedin.com/in/kwame-asare',
-      twitter: 'https://x.com/kwameasare_dev',
-      readcv: 'https://read.cv/kwameasare',
+      github: 'https://github.com/psasare',
+      linkedin: 'https://linkedin.com/in/psasare',
+      twitter: 'https://x.com/psasare_',
+      readcv: 'https://read.cv/psasare',
     },
   },
 
   about: {
-    lead: 'Great engineering is invisible. In emerging markets, building software is not merely about code—it is about bandwidth resilience, cultural nuance, and zero-downtime architecture when human lives are at stake.',
+    lead: 'Great engineering is quiet. In emerging markets, building software is not merely about code—it is about bandwidth resilience, cultural nuance, and zero-downtime architecture when human lives are at stake.',
     storyParagraphs: [
-      'Born and raised in Accra, I spent my university years studying both classical computer systems and the gritty reality of deploying software across West Africa. I watched powerful cloud apps fail the moment an optic fiber line dropped or student data bundles ran out.',
-      'That tension defined my craft. Today, I build full-stack and edge-native architectures that respect limited hardware, handle intermittent connectivity gracefully, and look and feel as refined as an Apple product.',
-      'When I am not debugging distributed sync protocols or training low-latency on-device NLP models, you will find me mentoring junior engineers in local tech hubs, designing micro-interactions in Figma, or analyzing healthcare data pipelines.',
+      'Born and raised in Ghana, I have spent my university years bridging classical systems engineering with the ground reality of deploying software across West Africa. I watched modern cloud architectures fail the moment an optic fiber severed or student data bundles expired.',
+      'That tension shaped my engineering creed: build full-stack and edge-native systems that respect hardware limits, survive network blackouts, and feel as calm, confident, and precise as an Apple product.',
+      'When I am not debugging distributed local-first sync protocols or tuning low-latency on-device NLP models, you will find me mentoring aspiring developers in local tech hubs, designing micro-interactions in Figma, or analyzing maternal health telemetry pipelines.',
     ],
     stats: [
       { label: 'Active University Users', value: '14,200+' },
       { label: 'Clinic Visits Digitized', value: '8,400+' },
-      { label: 'Lighthouse Score Target', value: '98/100' },
-      { label: 'Latency on 2G / Edge', value: '< 210ms' },
+      { label: 'Lighthouse Target Score', value: '98/100' },
+      { label: '2G / Edge Interaction Latency', value: '< 180ms' },
     ],
   },
 
   skills: [
     {
-      category: 'Languages & Core',
-      items: ['TypeScript', 'Python', 'Go', 'SQL (PostgreSQL)', 'Rust (Basics)', 'HTML5 / CSS3'],
+      category: 'Languages & Core Systems',
+      items: ['TypeScript', 'Python', 'Go (Golang)', 'SQL (PostgreSQL)', 'C / C++', 'HTML5 / CSS3'],
     },
     {
-      category: 'Frameworks & Web',
-      items: ['Next.js (App Router)', 'React 18/19', 'Tailwind CSS', 'Node.js', 'Express', 'FastAPI'],
+      category: 'Frontend & Creative Motion',
+      items: ['Next.js (App Router)', 'React 18', 'Tailwind CSS', 'GSAP + ScrollTrigger', 'Lenis Smooth Scroll', 'Three.js / WebGL', 'Framer Motion'],
     },
     {
-      category: 'Motion & Interface',
-      items: ['GSAP + ScrollTrigger', 'Framer Motion', 'Lenis Smooth Scroll', 'Three.js / WebGL', 'Figma Prototyping'],
+      category: 'Edge & Backend Architecture',
+      items: ['FastAPI', 'Node.js', 'PostgreSQL / pgvector', 'Redis / Upstash', 'Cloudflare Workers (Edge)', 'Docker', 'WebSockets'],
     },
     {
-      category: 'Edge & Cloud Architecture',
-      items: ['Docker', 'Supabase', 'Redis / Upstash', 'Cloudflare Workers (Edge)', 'Offline-First (PWA / Dexie)', 'AWS S3 / Lambda'],
+      category: 'Offline-First & Data Systems',
+      items: ['CRDTs (Yjs)', 'IndexedDB / Dexie.js', 'Service Workers / PWA', 'Web Bluetooth API', 'USSD Fallback Gateways'],
     },
     {
-      category: 'AI & Data Systems',
-      items: ['HuggingFace Transformers', 'Llama / Mistral Local Fine-tuning', 'Vector DBs (pgvector)', 'LangChain / LlamaIndex'],
+      category: 'Machine Learning & NLP',
+      items: ['HuggingFace Transformers', 'PyTorch (Quantized Models)', 'Local LLM Fine-Tuning', 'Vector Search & Embeddings'],
     },
   ],
 
@@ -123,7 +125,7 @@ export const PORTFOLIO_CONFIG = {
       year: '2025',
       tagline: 'Private, culturally attuned mental health triage for Ghanaian tertiary students.',
       summary:
-        'An offline-first, anonymous conversational triage platform tackling mental health stigma across Ghanaian university campuses with on-device NLP and 24/7 crisis escalation.',
+        'An offline-first, anonymous conversational triage platform tackling mental health stigma across Ghanaian university campuses with on-device NLP, localized linguistic models, and 24/7 crisis escalation.',
       role: 'Lead Architect & Full-Stack Developer',
       timeline: '8 Months (Research to Campus Rollout)',
       clientOrContext: 'Consortium of Ghanaian University Wellness Centers',
@@ -138,7 +140,7 @@ export const PORTFOLIO_CONFIG = {
       stack: ['Next.js 14', 'TypeScript', 'FastAPI', 'PyTorch / Transformers', 'pgvector', 'Tailwind CSS', 'PWA / WebSockets'],
       links: {
         live: 'https://mindbridge-gh.demo',
-        github: 'https://github.com/kwameasare/mindbridge-ai',
+        github: 'https://github.com/psasare/mindbridge-ai',
       },
       mockupType: 'iphone',
       problem: {
@@ -146,19 +148,19 @@ export const PORTFOLIO_CONFIG = {
         description:
           'Over 68% of university students in Ghana report experiencing severe academic burnout, anxiety, or depressive episodes. Yet the student-to-counselor ratio hovers at 1:4,200. Deep cultural stigma, fear of peer exposure, and high mobile data costs prevent students from seeking help early.',
         points: [
-          'High counselor burnout with weeks-long waitlists at university clinics',
+          'High counselor burnout with weeks-long waitlists at university health centers',
           'Heavy cultural stigma prevents in-person clinic visits until crises become acute',
-          'Expensive, unreliable campus Wi-Fi breaks traditional cloud-heavy mental health apps',
+          'Expensive, throttled campus Wi-Fi breaks traditional cloud-heavy mental health apps',
         ],
       },
       solution: {
         title: 'Culturally Tuned, Low-Bandwidth Triage',
         description:
-          'MindBridge bridges the gap with an anonymous, ultra-lightweight client that functions seamlessly even on low-cost Android phones and throttled 2G/3G connections. It leverages local Ghanaian colloquial phrasing (including Twi and Pidgin nuances) to detect early distress and instantly match students with licensed peer responders or clinical intervention.',
+          'MindBridge bridges the gap with an anonymous, ultra-lightweight client that functions smoothly even on entry-level Android devices and 2G/3G connections. It leverages local Ghanaian colloquial phrasing (including Twi and Pidgin nuances) to detect early distress and instantly match students with licensed peer responders or clinical intervention.',
         points: [
           'Dual-channel architecture: full PWA with an automated USSD/SMS fallback for non-smartphone users',
           'Zero-knowledge encryption for total student anonymity',
-          'Quantized on-device sentiment analyzer that runs at under 1.2MB total payload',
+          'Quantized on-device sentiment analyzer that runs under 1.2MB total payload',
         ],
       },
       architecture: {
@@ -199,12 +201,12 @@ export const PORTFOLIO_CONFIG = {
         { label: 'Expectant Mothers Monitored', value: '4,850', unit: '+' },
         { label: 'Pre-Eclampsia Risk Caught Early', value: '312', unit: ' cases' },
         { label: 'Offline Sync Success Rate', value: '100', unit: '%' },
-        { label: 'Battery Life Optimization', value: '18', unit: ' hrs' },
+        { label: 'Battery Optimization', value: '18', unit: ' hrs' },
       ],
       stack: ['Next.js App Router', 'TypeScript', 'Tailwind CSS', 'Dexie.js / IndexedDB', 'CRDTs (Yjs)', 'Web Bluetooth API', 'Node.js Edge'],
       links: {
         live: 'https://akomacare.health.gov.gh',
-        github: 'https://github.com/kwameasare/akomacare-maternal',
+        github: 'https://github.com/psasare/akomacare-maternal',
         paper: 'https://doi.org/10.1145/capstone-gh-maternal.2026',
       },
       mockupType: 'ipad',
@@ -265,13 +267,13 @@ export const PORTFOLIO_CONFIG = {
       metrics: [
         { label: 'Cocoa Bags Digitally Traced', value: '48,000', unit: '+' },
         { label: 'Payment Payout Delay', value: '< 12', unit: 's' },
-        { label: 'Price Cheating Incidents', value: '0', unit: ' recorded' },
+        { label: 'Price Tampering Incidents', value: '0', unit: ' recorded' },
         { label: 'Farmer Satisfaction', value: '98.7', unit: '%' },
       ],
       stack: ['Next.js', 'Go (Golang)', 'PostgreSQL', 'Tailwind CSS', 'MTN MoMo API', 'WebSockets', 'Chart.js'],
       links: {
         live: 'https://agripulse.africa',
-        github: 'https://github.com/kwameasare/agripulse-core',
+        github: 'https://github.com/psasare/agripulse-core',
       },
       mockupType: 'macbook',
       problem: {
@@ -316,22 +318,20 @@ export const PORTFOLIO_CONFIG = {
   ] as Project[],
 
   motion: {
-    // Apple-grade custom cubic-bezier easings
     easings: {
-      appleExpo: [0.16, 1, 0.3, 1], // Confident, smooth decelerate
+      appleExpo: [0.16, 1, 0.3, 1], // Apple-style smooth confident decelerate
       appleSnappy: [0.25, 1, 0.5, 1],
-      appleSpring: { type: 'spring', stiffness: 300, damping: 28 },
+      appleSpring: { type: 'spring', stiffness: 320, damping: 28 },
       gsapEase: 'power3.out',
       gsapExpo: 'expo.out',
     },
     durations: {
-      fast: 0.25,
-      normal: 0.5,
+      fast: 0.22,
+      normal: 0.45,
       slow: 0.85,
-      cinematic: 1.2,
-      preloader: 1.8,
+      cinematic: 1.15,
+      preloader: 1.5,
     },
     stagger: 0.08,
   },
 };
-
