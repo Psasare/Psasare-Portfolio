@@ -74,12 +74,12 @@ export const Hero: React.FC = () => {
         >
           <span className="mask-line-container block">
             <span className="hero-mask-line block text-white drop-shadow-sm">
-              Systems engineered
+              Systems built for
             </span>
           </span>
           <span className="mask-line-container block">
             <span className="hero-mask-line block text-white/90">
-              to never fail.
+              the real world.
             </span>
           </span>
         </h1>
