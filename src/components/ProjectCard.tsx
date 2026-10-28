@@ -2,13 +2,13 @@
 
 import React, { useRef, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Project } from '@/config/portfolio';
 import { DeviceMockup } from './DeviceMockup';
 import { MagneticButton } from './MagneticButton';
-import { ArrowUpRight, CheckCircle2, Layers } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2 } from 'lucide-react';
 import { useSound } from './SoundEffects';
 
 if (typeof window !== 'undefined') {
@@ -29,8 +29,8 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
       gsap.fromTo(
         visualRef.current,
         {
-          scale: 0.92,
-          borderRadius: '36px',
+          scale: 0.93,
+          borderRadius: '32px',
         },
         {
           scale: 1,
@@ -66,8 +66,8 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-mono text-xs tracking-widest uppercase text-white/50">
-                0{index + 1} // {project.category}
+              <span className="text-xs font-mono tracking-widest uppercase text-apple-glow font-medium">
+                {project.category}
               </span>
               <span className="h-1 w-1 rounded-full bg-white/40" />
               <span className="text-xs font-mono text-white/40">{project.year}</span>
@@ -89,7 +89,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
                   style={{ borderColor: project.accentColor }}
                   className="inline-flex items-center gap-2 rounded-full glass-panel px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all shadow-lg hover:shadow-cyan-500/10"
                 >
-                  Deep Dive Case Study
+                  Read Case Study
                   <ArrowUpRight size={16} className="text-apple-glow" />
                 </span>
               </MagneticButton>
@@ -103,7 +103,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
           data-cursor="view"
           className="relative w-full rounded-[32px] glass-panel p-6 md:p-12 lg:p-14 overflow-hidden border-white/10 shadow-[0_30px_90px_rgba(0,0,0,0.8)] group transition-all"
         >
-          {/* Subtle Ambient Reflector Gradient */}
+          {/* Ambient Glass Highlight */}
           <div
             className="pointer-events-none absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-700 bg-gradient-to-br from-white via-transparent to-black"
           />
@@ -121,8 +121,8 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
             {/* Right: Key Quantitative Metrics & Tech Architecture */}
             <div className="lg:col-span-5 flex flex-col justify-between gap-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-glow block mb-2">
-                  VERIFIED IMPACT METRICS
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40 block mb-2">
+                  MEASURED IMPACT
                 </span>
                 <p className="text-sm md:text-base text-white/70 leading-relaxed">
                   {project.summary}
@@ -221,4 +221,3 @@ const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: stri
     </div>
   );
 };
-
