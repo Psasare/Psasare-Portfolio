@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", system-ui, sans-serif;
+  --apple-void: #070709;
+  --apple-obsidian: #0d0d12;
+  --apple-surface: #15151c;
+  --apple-azure: #0071e3;
+  --apple-glow: #2997ff;
+}
+
+/* Smooth Scrolling Baseline */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--apple-void);
+  color: #f5f5f7;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  selection-background-color: rgba(41, 151, 255, 0.3);
+  selection-color: #ffffff;
+}
+
+::selection {
+  background-color: rgba(41, 151, 255, 0.35);
+  color: #ffffff;
+}
+
+/* Apple Sub-pixel Glass & Border Accents */
+.glass-panel {
+  background: rgba(18, 18, 24, 0.65);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(22, 22, 28, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Apple Fluid Typography Utilities */
+.fluid-hero {
+  font-size: clamp(2.75rem, 8vw, 7.5rem);
+  line-height: 0.94;
+  letter-spacing: -0.04em;
+}
+
+.fluid-section-title {
+  font-size: clamp(2.2rem, 5.2vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.fluid-statement {
+  font-size: clamp(1.6rem, 3.5vw, 3rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+/* Mask Reveal Utilities */
+.mask-line-container {
+  overflow: hidden;
+  display: block;
+}
+
+.mask-line-content {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Custom Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Noise Texture Overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
