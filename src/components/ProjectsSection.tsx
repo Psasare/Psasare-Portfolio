@@ -20,7 +20,7 @@ export const ProjectsSection: React.FC = () => {
             Software engineered for real human impact.
           </h2>
           <p className="font-sans text-sm md:text-base text-white/55 max-w-md font-normal leading-relaxed">
-            Each project is an end-to-end production build solving critical bottlenecks across Ghana&apos;s educational, maternal health, and agricultural ecosystems.
+            Each project is an end-to-end production build solving critical bottlenecks across Ghana&apos;s healthcare, student wellness, and university academic infrastructure.
           </p>
         </div>
       </div>
