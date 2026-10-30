@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
 import { MagneticButton } from './MagneticButton';
-import { ArrowUpRight, Copy, Check, Github, Linkedin, Twitter, ArrowUp, Mail } from 'lucide-react';
+import { ArrowUpRight, Copy, Check, Github, Linkedin, ArrowUp, Mail } from 'lucide-react';
 import { useSound } from './SoundEffects';
 
 export const ContactSection: React.FC = () => {
@@ -98,14 +98,6 @@ export const ContactSection: React.FC = () => {
               <span className="inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-xs font-semibold text-white hover:bg-white/10 transition-all">
                 <Linkedin size={15} />
                 LinkedIn
-                <ArrowUpRight size={13} className="text-white/40" />
-              </span>
-            </MagneticButton>
-
-            <MagneticButton href={PORTFOLIO_CONFIG.profile.social.twitter} strength={0.3}>
-              <span className="inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-xs font-semibold text-white hover:bg-white/10 transition-all">
-                <Twitter size={15} />
-                X / Twitter
                 <ArrowUpRight size={13} className="text-white/40" />
               </span>
             </MagneticButton>

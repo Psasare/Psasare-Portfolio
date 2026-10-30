@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${PORTFOLIO_CONFIG.profile.name} — ${PORTFOLIO_CONFIG.profile.role}`,
     description: PORTFOLIO_CONFIG.profile.tagline,
-    creator: '@psasare_',
   },
   robots: {
     index: true,

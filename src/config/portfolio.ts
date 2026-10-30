@@ -73,7 +73,6 @@ export const PORTFOLIO_CONFIG = {
     social: {
       github: 'https://github.com/Psasare',
       linkedin: 'https://www.linkedin.com/in/prosper-shaibu-asare-284244339',
-      twitter: 'https://x.com/psasare_',
       readcv: 'https://read.cv/psasare',
     },
   },
