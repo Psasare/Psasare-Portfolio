@@ -9,11 +9,83 @@
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
 
+  /* Light Theme (Apple Studio Ceramic) */
+  --bg-canvas: #fbfbfd;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f5f5f7;
+  --bg-subtle: #f0f0f4;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  --text-primary: #1d1d1f;
+  --text-secondary: rgba(29, 29, 31, 0.72);
+  --text-muted: rgba(29, 29, 31, 0.48);
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-pill-bg: rgba(245, 245, 247, 0.86);
+  --glass-pill-border: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --selection-bg: rgba(0, 113, 227, 0.2);
+  --selection-text: #0071e3;
+  --apple-void: #fbfbfd;
+  --apple-obsidian: #ffffff;
+  --apple-surface: #f5f5f7;
+  --apple-azure: #0071e3;
+  --apple-glow: #0071e3;
+  --apple-emerald: #28cd41;
+}
+
+.dark {
+  /* Dark Theme (Apple Space Void) */
+  --bg-canvas: #070709;
+  --bg-surface: #0e0e13;
+  --bg-surface-elevated: #15151c;
+  --bg-subtle: #1c1c24;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --text-primary: #f5f5f7;
+  --text-secondary: rgba(245, 245, 247, 0.7);
+  --text-muted: rgba(245, 245, 247, 0.44);
+  --glass-bg: rgba(18, 18, 24, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-pill-bg: rgba(22, 22, 28, 0.75);
+  --glass-pill-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --selection-bg: rgba(41, 151, 255, 0.35);
+  --selection-text: #ffffff;
   --apple-void: #070709;
   --apple-obsidian: #0d0d12;
   --apple-surface: #15151c;
   --apple-azure: #0071e3;
   --apple-glow: #2997ff;
+  --apple-emerald: #30d158;
+}
+
+/* Circular Ripple View Transition (Chrome, Edge, Safari 18+) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Fallback smooth transition for browsers or elements without View Transitions */
+html:not([data-theme-transitioning='true']) body,
+html:not([data-theme-transitioning='true']) .glass-panel,
+html:not([data-theme-transitioning='true']) .glass-pill,
+html:not([data-theme-transitioning='true']) section {
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Smooth Scrolling Baseline */
@@ -38,10 +110,10 @@ html.lenis body {
   pointer-events: none;
 }
 
-/* Base Body Styles: Inter for compact, crisp readability */
+/* Base Body Styles */
 body {
-  background-color: var(--apple-void);
-  color: #f5f5f7;
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
   font-family: var(--font-inter);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -49,23 +121,24 @@ body {
 }
 
 ::selection {
-  background-color: rgba(41, 151, 255, 0.35);
-  color: #ffffff;
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 /* Apple Sub-pixel Glass & Border Accents */
 .glass-panel {
-  background: rgba(18, 18, 24, 0.65);
+  background: var(--glass-bg);
   backdrop-filter: blur(24px) saturate(190%);
   -webkit-backdrop-filter: blur(24px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
 }
 
 .glass-pill {
-  background: rgba(22, 22, 28, 0.72);
+  background: var(--glass-pill-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-pill-border);
 }
 
 .glass-panel-light {
@@ -73,6 +146,23 @@ body {
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Semantic Section Backgrounds */
+.bg-canvas {
+  background-color: var(--bg-canvas);
+}
+
+.bg-surface {
+  background-color: var(--bg-surface);
+}
+
+.bg-surface-elevated {
+  background-color: var(--bg-surface-elevated);
+}
+
+.border-subtle {
+  border-color: var(--border-subtle);
 }
 
 /* Fluid Typography Utilities using Montserrat for Headlines */
@@ -115,16 +205,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #08080a;
+  background: var(--bg-canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.16);
+  background: var(--border-strong);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: var(--apple-azure);
 }
 
 /* Noise Texture Overlay */

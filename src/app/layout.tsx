@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
+import { SoundProvider } from '@/components/SoundEffects';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: `${PORTFOLIO_CONFIG.profile.name} — ${PORTFOLIO_CONFIG.profile.role}`,
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     'Next.js',
     'GSAP',
     'Three.js',
-    'MindBridge - Mental Health Navigator Mobile App for Tertiary Students',
+    'MindBridge AI',
     'Bloom Maternal Health App',
     'Course Registration System',
     'Library Management System',
@@ -58,8 +60,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="bg-[#070709] text-[#f5f5f7] antialiased selection:bg-[#0071e3] selection:text-white">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const saved = localStorage.getItem('apple_portfolio_theme');
+                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (saved === 'light' || (!saved && !prefersDark)) {
+                    document.documentElement.classList.add('light');
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="bg-[var(--bg-canvas)] text-[var(--text-primary)] antialiased transition-colors duration-300 selection:bg-apple-azure selection:text-white">
         {/* Accessible Skip to Main Content Link */}
         <a
           href="#main-content"
@@ -67,7 +90,11 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <SoundProvider>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </SoundProvider>
       </body>
     </html>
   );

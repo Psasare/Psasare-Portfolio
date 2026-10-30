@@ -97,6 +97,38 @@ export const HeroCanvas: React.FC = () => {
     cyanLight.position.set(-3, -2, 3);
     scene.add(cyanLight);
 
+    // Dynamic Theme Color Adjustment
+    const updateThemeVisuals = (isDark: boolean) => {
+      if (isDark) {
+        material.color.setHex(0x0071e3);
+        material.emissive.setHex(0x0a1a3a);
+        material.opacity = 0.72;
+        wireframeMat.color.setHex(0x2997ff);
+        wireframeMat.opacity = 0.12;
+        particleMat.color.setHex(0x60a5fa);
+        particleMat.opacity = 0.45;
+        ambientLight.intensity = 0.7;
+      } else {
+        material.color.setHex(0x0071e3);
+        material.emissive.setHex(0xd0e4ff);
+        material.opacity = 0.65;
+        wireframeMat.color.setHex(0x0071e3);
+        wireframeMat.opacity = 0.18;
+        particleMat.color.setHex(0x0071e3);
+        particleMat.opacity = 0.55;
+        ambientLight.intensity = 1.2;
+      }
+    };
+
+    const initialDark = document.documentElement.classList.contains('dark');
+    updateThemeVisuals(initialDark);
+
+    const onThemeChange = (e: Event) => {
+      const customEvent = e as CustomEvent<{ theme: 'dark' | 'light' }>;
+      updateThemeVisuals(customEvent.detail?.theme === 'dark');
+    };
+    window.addEventListener('theme-change', onThemeChange);
+
     // 6. Smooth Mouse Tracking with Lerp
     let mouseX = 0;
     let mouseY = 0;
@@ -164,6 +196,7 @@ export const HeroCanvas: React.FC = () => {
 
     // Cleanup
     return () => {
+      window.removeEventListener('theme-change', onThemeChange);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
       observer.disconnect();

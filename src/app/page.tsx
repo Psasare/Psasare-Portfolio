@@ -11,38 +11,34 @@ import { CapabilitiesGrid } from '@/components/CapabilitiesGrid';
 import { AboutSection } from '@/components/AboutSection';
 import { ContactSection } from '@/components/ContactSection';
 import { SmoothScroll } from '@/components/SmoothScroll';
-import { SoundProvider } from '@/components/SoundEffects';
 
 export default function HomePage() {
   const [preloaderComplete, setPreloaderComplete] = useState(false);
 
   return (
-    <SoundProvider>
-      <SmoothScroll>
-        <div className="relative min-h-screen bg-[#070709] text-white selection:bg-apple-azure selection:text-white">
-          {/* Intro Loading Sequence */}
-          {!preloaderComplete && (
-            <Preloader onComplete={() => setPreloaderComplete(true)} />
-          )}
+    <SmoothScroll>
+      <div className="relative min-h-screen bg-[var(--bg-canvas)] text-[var(--text-primary)] transition-colors duration-300">
+        {/* Intro Loading Sequence */}
+        {!preloaderComplete && (
+          <Preloader onComplete={() => setPreloaderComplete(true)} />
+        )}
 
-          {/* Interactive Custom Cursor */}
-          <CustomCursor />
+        {/* Interactive Custom Cursor */}
+        <CustomCursor />
 
-          {/* Floating Apple Navigation */}
-          <Navigation />
+        {/* Floating Apple Navigation with Theme Switcher */}
+        <Navigation />
 
-          {/* Main Portfolio Structure */}
-          <main id="main-content">
-            <Hero />
-            <IntroStatement />
-            <ProjectsSection />
-            <CapabilitiesGrid />
-            <AboutSection />
-            <ContactSection />
-          </main>
-        </div>
-      </SmoothScroll>
-    </SoundProvider>
+        {/* Main Portfolio Structure */}
+        <main id="main-content">
+          <Hero />
+          <IntroStatement />
+          <ProjectsSection />
+          <CapabilitiesGrid />
+          <AboutSection />
+          <ContactSection />
+        </main>
+      </div>
+    </SmoothScroll>
   );
 }
-

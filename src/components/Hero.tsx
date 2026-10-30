@@ -55,12 +55,12 @@ export const Hero: React.FC = () => {
 
       {/* Top Status Capsule (JetBrains Mono) */}
       <div className="hero-fade-item relative z-10 mx-auto mb-6">
-        <div className="inline-flex items-center gap-2.5 rounded-full glass-pill px-4 py-1.5 shadow-lg border-white/10 hover:border-white/20 transition-all font-mono text-xs">
+        <div className="inline-flex items-center gap-2.5 rounded-full glass-pill px-4 py-1.5 shadow-lg border-[var(--border-subtle)] font-mono text-xs">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-apple-emerald opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-apple-emerald" />
           </span>
-          <span className="text-white/85">
+          <span className="text-[var(--text-secondary)]">
             {PORTFOLIO_CONFIG.profile.availability}
           </span>
         </div>
@@ -70,24 +70,24 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-5xl text-center my-auto flex flex-col items-center">
         <h1
           ref={headlineRef}
-          className="font-display fluid-hero font-extrabold tracking-[-0.035em] text-white select-none max-w-4xl"
+          className="font-display fluid-hero font-extrabold tracking-[-0.035em] text-[var(--text-primary)] select-none max-w-4xl"
         >
           <span className="mask-line-container block">
-            <span className="hero-mask-line block text-white drop-shadow-sm">
+            <span className="hero-mask-line block text-[var(--text-primary)] drop-shadow-sm">
               Systems built for
             </span>
           </span>
           <span className="mask-line-container block">
-            <span className="hero-mask-line block text-white/90">
+            <span className="hero-mask-line block text-[var(--text-secondary)]">
               the real world.
             </span>
           </span>
         </h1>
 
         {/* Positioning Paragraph (Inter Body) */}
-        <p className="hero-fade-item font-sans mt-6 md:mt-8 max-w-2xl text-base md:text-xl font-normal leading-relaxed text-white/70">
-          <strong className="text-white font-medium">{PORTFOLIO_CONFIG.profile.name}</strong> &mdash; {PORTFOLIO_CONFIG.profile.tagline}{' '}
-          <span className="text-white/45 block sm:inline mt-1 sm:mt-0 font-normal">
+        <p className="hero-fade-item font-sans mt-6 md:mt-8 max-w-2xl text-base md:text-xl font-normal leading-relaxed text-[var(--text-secondary)]">
+          <strong className="text-[var(--text-primary)] font-medium">{PORTFOLIO_CONFIG.profile.name}</strong> &mdash; {PORTFOLIO_CONFIG.profile.tagline}{' '}
+          <span className="text-[var(--text-tertiary)] block sm:inline mt-1 sm:mt-0 font-normal">
             Final-year Computer Science candidate building resilient AI, maternal telemetry, and offline-first distributed systems.
           </span>
         </p>
@@ -95,15 +95,15 @@ export const Hero: React.FC = () => {
         {/* Action Magnetic Buttons (Inter Semi-Bold) */}
         <div className="hero-fade-item mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-4 font-sans">
           <MagneticButton href="#projects" strength={0.25} dataCursor="pointer">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black hover:bg-apple-light shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[var(--text-primary)] text-[var(--bg-canvas)] px-7 py-3.5 text-sm font-semibold hover:opacity-90 shadow-lg hover:shadow-cyan-500/10 transition-all">
               Explore Selected Work
               <ChevronRight size={16} />
             </span>
           </MagneticButton>
 
           <MagneticButton href="#about" strength={0.25} dataCursor="pointer">
-            <span className="inline-flex items-center gap-2 rounded-full glass-panel px-6 py-3.5 text-sm font-medium text-white/90 hover:text-white hover:bg-white/[0.12] transition-all">
-              <FileText size={16} className="text-apple-glow" />
+            <span className="inline-flex items-center gap-2 rounded-full glass-panel px-6 py-3.5 text-sm font-medium text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/[0.12] transition-all">
+              <FileText size={16} className="text-apple-azure" />
               Philosophy &amp; Bio
             </span>
           </MagneticButton>
@@ -114,11 +114,11 @@ export const Hero: React.FC = () => {
       <div className="hero-fade-item relative z-10 flex flex-col items-center justify-center pt-8">
         <a
           href="#statement"
-          className="group flex flex-col items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-white/40 hover:text-white/80 transition-colors no-underline"
+          className="group flex flex-col items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors no-underline"
           aria-label="Scroll to explore"
         >
           <span>Scroll to explore</span>
-          <div className="flex h-9 w-5 items-start justify-center rounded-full border border-white/20 p-1">
+          <div className="flex h-9 w-5 items-start justify-center rounded-full border border-[var(--border-subtle)] p-1">
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
