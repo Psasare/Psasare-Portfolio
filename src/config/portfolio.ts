@@ -74,7 +74,7 @@ export const PORTFOLIO_CONFIG = {
       degree: 'BSc Computer Science',
       institution: 'University of Ghana',
       honours: 'Second Class Honours (Upper Division)',
-      location: 'Legon, Accra · Ho, Ghana',
+      location: 'Ho, Ghana',
     },
     social: {
       github: 'https://github.com/Psasare',

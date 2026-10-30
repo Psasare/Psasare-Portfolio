@@ -64,7 +64,7 @@ export const Hero: React.FC = () => {
             AVAILABLE FOR HIGH-IMPACT ROLES
           </span>
           <span className="h-1 w-1 rounded-full bg-[var(--border-strong)]" />
-          <span className="text-[var(--text-tertiary)]">HO / ACCRA, GHANA</span>
+          <span className="text-[var(--text-tertiary)]">HO, GHANA</span>
         </div>
       </div>
 
