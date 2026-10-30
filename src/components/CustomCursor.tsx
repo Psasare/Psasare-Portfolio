@@ -93,17 +93,17 @@ export const CustomCursor: React.FC = () => {
           height: cursorVariant === 'project' ? 88 : cursorVariant === 'hover' ? 52 : 36,
           backgroundColor:
             cursorVariant === 'project'
-              ? 'rgba(41, 151, 255, 0.92)'
+              ? 'rgba(0, 113, 227, 0.94)'
               : cursorVariant === 'hover'
-              ? 'rgba(255, 255, 255, 0.14)'
-              : 'rgba(255, 255, 255, 0.04)',
+              ? 'var(--border-subtle)'
+              : 'transparent',
           backdropFilter: cursorVariant === 'project' ? 'blur(12px)' : 'blur(4px)',
           border:
             cursorVariant === 'project'
-              ? '1px solid rgba(255, 255, 255, 0.4)'
+              ? '1px solid rgba(255, 255, 255, 0.5)'
               : cursorVariant === 'hover'
-              ? '1px solid rgba(255, 255, 255, 0.35)'
-              : '1px solid rgba(255, 255, 255, 0.15)',
+              ? '1px solid var(--border-strong)'
+              : '1px solid var(--border-subtle)',
         }}
         transition={{ type: 'spring', damping: 25, stiffness: 350 }}
       >
@@ -111,7 +111,7 @@ export const CustomCursor: React.FC = () => {
           <motion.span
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-[11px] font-semibold tracking-widest text-white drop-shadow-sm"
+            className="text-[11px] font-semibold tracking-widest text-white drop-shadow-sm font-sans"
           >
             {cursorText}
           </motion.span>
@@ -120,7 +120,7 @@ export const CustomCursor: React.FC = () => {
 
       {/* Center Precise Aim Point */}
       <motion.div
-        className="fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-white will-change-transform shadow-[0_0_8px_rgba(255,255,255,0.8)]"
+        className="fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-[var(--text-primary)] will-change-transform shadow-sm"
         style={{
           x: dotX,
           y: dotY,
@@ -136,4 +136,3 @@ export const CustomCursor: React.FC = () => {
     </div>
   );
 };
-
