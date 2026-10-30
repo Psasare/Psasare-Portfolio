@@ -115,7 +115,7 @@ export const ContactSection: React.FC = () => {
           <div className="flex items-center gap-3">
             <span>© {new Date().getFullYear()} {PORTFOLIO_CONFIG.profile.name}</span>
             <span>·</span>
-            <span>ACCRA, GHANA</span>
+            <span>HO, GHANA</span>
           </div>
 
           <div className="flex items-center gap-6">

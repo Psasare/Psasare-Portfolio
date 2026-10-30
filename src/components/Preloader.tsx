@@ -84,7 +84,7 @@ export const Preloader: React.FC<{ onComplete: () => void }> = ({ onComplete }) 
                 }}
                 className="text-xs md:text-sm tracking-[0.25em] uppercase text-white/50 text-center font-mono"
               >
-                CRAFTING CALM &amp; RESILIENT SOFTWARE · ACCRA
+                CRAFTING CALM &amp; RESILIENT SOFTWARE · HO, GHANA
               </motion.p>
             </div>
           </div>

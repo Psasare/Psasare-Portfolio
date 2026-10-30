@@ -90,10 +90,10 @@ export const Navigation: React.FC = () => {
 
           {/* Right Utility: Time Pill + Audio + CTA */}
           <div className="flex items-center gap-2 md:gap-3">
-            {/* Accra Clock Pill (JetBrains Mono) */}
+            {/* Ho Clock Pill (JetBrains Mono) */}
             <div className="hidden lg:flex items-center gap-2 rounded-full bg-white/[0.04] px-3 py-1 border border-white/[0.06] text-[11px] text-white/60 font-mono">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-apple-emerald animate-pulse" />
-              <span>Accra {accraTime || '11:00 AM'}</span>
+              <span>Ho {accraTime || '11:00 AM'}</span>
             </div>
 
             {/* Sound Toggle */}
@@ -155,7 +155,7 @@ export const Navigation: React.FC = () => {
             ))}
             <div className="pt-2 flex flex-col items-center gap-3">
               <span className="text-xs text-white/50 font-mono">
-                ACCRA (GMT) // {accraTime || '11:00 AM'}
+                HO, GHANA (GMT) // {accraTime || '11:00 AM'}
               </span>
               <a
                 href="#contact"

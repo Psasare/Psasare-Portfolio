@@ -65,7 +65,7 @@ export const PORTFOLIO_CONFIG = {
     tagline: 'I build software that solves real problems in Ghana.',
     subheadline:
       'Final-year Computer Science candidate. Crafting calm, resilient digital systems at the intersection of AI, healthcare infrastructure, and human dignity.',
-    location: 'Accra, Ghana',
+    location: 'Ho, Ghana',
     timezone: 'Africa/Accra',
     email: 'prosper@psasare.dev',
     altEmail: 'psasare.dev@gmail.com',
