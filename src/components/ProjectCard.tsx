@@ -53,11 +53,11 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
     <article
       ref={cardRef}
       id={`project-${project.slug}`}
-      className="relative min-h-[95vh] w-full flex flex-col justify-center py-20 px-6 md:px-14 lg:px-20 border-b border-white/[0.06] overflow-hidden"
+      className="relative min-h-[95vh] w-full flex flex-col justify-center py-20 px-6 md:px-14 lg:px-20 border-b border-[var(--border-subtle)] overflow-hidden transition-colors duration-400"
     >
       {/* Background Accent Glow */}
       <div
-        className="pointer-events-none absolute -top-40 right-0 w-[550px] h-[550px] rounded-full blur-[160px] opacity-20"
+        className="pointer-events-none absolute -top-40 right-0 w-[550px] h-[550px] rounded-full blur-[160px] opacity-15 dark:opacity-20"
         style={{ backgroundColor: project.accentColor }}
       />
 
@@ -66,17 +66,17 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3 font-mono">
-              <span className="text-xs tracking-widest uppercase text-apple-glow font-medium">
+              <span className="text-xs tracking-widest uppercase text-apple-azure font-medium">
                 {project.category}
               </span>
-              <span className="h-1 w-1 rounded-full bg-white/40" />
-              <span className="text-xs text-white/40">{project.year}</span>
+              <span className="h-1 w-1 rounded-full bg-[var(--border-strong)]" />
+              <span className="text-xs text-[var(--text-tertiary)]">{project.year}</span>
             </div>
 
-            <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)]">
               {project.title}
             </h3>
-            <p className="font-sans mt-2 text-base md:text-xl text-white/60 max-w-2xl font-normal leading-relaxed">
+            <p className="font-sans mt-2 text-base md:text-xl text-[var(--text-secondary)] max-w-2xl font-normal leading-relaxed">
               {project.tagline}
             </p>
           </div>
@@ -87,10 +87,10 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
               <MagneticButton strength={0.3} dataCursor="view">
                 <span
                   style={{ borderColor: project.accentColor }}
-                  className="inline-flex items-center gap-2 rounded-full glass-panel px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all shadow-lg hover:shadow-cyan-500/10"
+                  className="inline-flex items-center gap-2 rounded-full glass-panel px-6 py-3 text-sm font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all shadow-md hover:shadow-cyan-500/10"
                 >
                   Read Case Study
-                  <ArrowUpRight size={16} className="text-apple-glow" />
+                  <ArrowUpRight size={16} className="text-apple-azure" />
                 </span>
               </MagneticButton>
             </Link>
@@ -101,7 +101,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
         <div
           ref={visualRef}
           data-cursor="view"
-          className="relative w-full rounded-[32px] glass-panel p-6 md:p-12 lg:p-14 overflow-hidden border-white/10 shadow-[0_30px_90px_rgba(0,0,0,0.8)] group transition-all"
+          className="relative w-full rounded-[32px] glass-panel p-6 md:p-12 lg:p-14 overflow-hidden border-[var(--border-subtle)] group transition-all"
         >
           {/* Ambient Glass Highlight */}
           <div
@@ -121,10 +121,10 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
             {/* Right: Key Quantitative Metrics & Tech Architecture */}
             <div className="lg:col-span-5 flex flex-col justify-between gap-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-white/40 block mb-2">
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)] block mb-2">
                   MEASURED IMPACT
                 </span>
-                <p className="font-sans text-sm md:text-base text-white/70 leading-relaxed">
+                <p className="font-sans text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">
                   {project.summary}
                 </p>
               </div>
@@ -138,14 +138,14 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
 
               {/* Stack Pills (JetBrains Mono) */}
               <div className="pt-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-white/40 block mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--text-tertiary)] block mb-2">
                   ENGINEERING STACK
                 </span>
                 <div className="flex flex-wrap gap-1.5 font-mono">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs rounded-full bg-white/[0.05] border border-white/[0.08] px-3 py-1 text-white/80"
+                      className="text-xs rounded-full bg-black/[0.03] dark:bg-white/[0.05] border border-[var(--border-subtle)] px-3 py-1 text-[var(--text-secondary)]"
                     >
                       {tech}
                     </span>
@@ -154,9 +154,9 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
               </div>
 
               {/* Bottom Context Badge */}
-              <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-xs text-white/50 font-mono">
+              <div className="pt-2 border-t border-[var(--border-subtle)] flex items-center justify-between text-xs text-[var(--text-tertiary)] font-mono">
                 <span className="truncate">Role: {project.role}</span>
-                <span className="shrink-0 text-apple-emerald flex items-center gap-1">
+                <span className="shrink-0 text-apple-emerald flex items-center gap-1 font-semibold">
                   <CheckCircle2 size={12} /> Production Pilot
                 </span>
               </div>
@@ -209,14 +209,14 @@ const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: stri
   }, [isInView, rawNumber, isNumeric, delay]);
 
   return (
-    <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-3.5 hover:border-white/20 transition-all font-mono">
+    <div className="rounded-2xl bg-black/[0.02] dark:bg-white/[0.03] border border-[var(--border-subtle)] p-3.5 hover:border-[var(--border-strong)] transition-all font-mono">
       <div className="flex items-baseline gap-1">
-        <span className="text-2xl md:text-3xl font-bold text-white tracking-tight">
+        <span className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] tracking-tight">
           {isNumeric ? count.toLocaleString() : metric.value}
         </span>
-        {metric.unit && <span className="text-sm font-semibold text-apple-glow">{metric.unit}</span>}
+        {metric.unit && <span className="text-sm font-semibold text-apple-azure">{metric.unit}</span>}
       </div>
-      <span className="text-xs text-white/50 block mt-1 leading-tight font-sans">{metric.label}</span>
+      <span className="text-xs text-[var(--text-secondary)] block mt-1 leading-tight font-sans">{metric.label}</span>
     </div>
   );
 };

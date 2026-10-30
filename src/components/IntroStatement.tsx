@@ -28,13 +28,11 @@ export const IntroStatement: React.FC = () => {
       gsap.fromTo(
         wordSpans,
         {
-          opacity: 0.16,
-          color: 'rgba(255, 255, 255, 0.2)',
+          opacity: 0.18,
           filter: 'blur(3px)',
         },
         {
           opacity: 1,
-          color: '#ffffff',
           filter: 'blur(0px)',
           stagger: 0.05,
           scrollTrigger: {
@@ -54,7 +52,7 @@ export const IntroStatement: React.FC = () => {
     <section
       id="statement"
       ref={containerRef}
-      className="relative min-h-[75vh] w-full flex items-center justify-center px-6 md:px-16 lg:px-24 py-28 border-y border-white/[0.06] bg-[#09090c]"
+      className="relative min-h-[75vh] w-full flex items-center justify-center px-6 md:px-16 lg:px-24 py-28 border-y border-[var(--border-subtle)] bg-[var(--bg-canvas)] transition-colors duration-400"
     >
       {/* Background Radial Glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
@@ -63,7 +61,7 @@ export const IntroStatement: React.FC = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Subtitle Pill (JetBrains Mono) */}
-        <div className="mb-6 inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-glow">
+        <div className="mb-6 inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-azure">
           <span className="h-1.5 w-1.5 rounded-full bg-apple-azure" />
           CORE ENGINEERING CREED
         </div>
@@ -71,7 +69,7 @@ export const IntroStatement: React.FC = () => {
         {/* Word-by-Word Scrubbed Paragraph (Montserrat Display) */}
         <p
           ref={textRef}
-          className="font-display fluid-statement font-semibold tracking-[-0.025em] leading-[1.3] text-white/20 select-none"
+          className="font-display fluid-statement font-semibold tracking-[-0.025em] leading-[1.3] text-[var(--text-primary)] select-none"
         >
           {words.map((word, index) => (
             <span key={index} className="statement-word inline-block mr-[0.28em] transition-all will-change-[opacity,transform,filter]">
@@ -81,10 +79,10 @@ export const IntroStatement: React.FC = () => {
         </p>
 
         {/* Context Signature (Inter + JetBrains Mono) */}
-        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-white/40 font-sans">
-          <span className="h-px w-10 bg-white/20" />
+        <div className="mt-12 flex items-center justify-center gap-3 text-sm text-[var(--text-tertiary)] font-sans">
+          <span className="h-px w-10 bg-[var(--border-subtle)]" />
           <span>{PORTFOLIO_CONFIG.profile.name} · <span className="font-mono text-xs">{PORTFOLIO_CONFIG.profile.location}</span></span>
-          <span className="h-px w-10 bg-white/20" />
+          <span className="h-px w-10 bg-[var(--border-subtle)]" />
         </div>
       </div>
     </section>
