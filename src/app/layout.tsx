@@ -5,7 +5,7 @@ import { SoundProvider } from '@/components/SoundEffects';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
-  title: `${PORTFOLIO_CONFIG.profile.name} — ${PORTFOLIO_CONFIG.profile.role}`,
+  title: `${PORTFOLIO_CONFIG.profile.name} · ${PORTFOLIO_CONFIG.profile.role}`,
   description: `${PORTFOLIO_CONFIG.profile.tagline} Final-year Computer Science candidate building resilient AI and offline-first healthcare systems in Ghana.`,
   keywords: [
     'Prosper Shaibu Asare',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://psasare.dev',
-    title: `${PORTFOLIO_CONFIG.profile.name} — ${PORTFOLIO_CONFIG.profile.role}`,
+    title: `${PORTFOLIO_CONFIG.profile.name} · ${PORTFOLIO_CONFIG.profile.role}`,
     description: PORTFOLIO_CONFIG.profile.tagline,
     siteName: `${PORTFOLIO_CONFIG.profile.name} Portfolio`,
     images: [
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
         url: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80',
         width: 1200,
         height: 630,
-        alt: `${PORTFOLIO_CONFIG.profile.name} — Engineering Portfolio`,
+        alt: `${PORTFOLIO_CONFIG.profile.name} · Engineering Portfolio`,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${PORTFOLIO_CONFIG.profile.name} — ${PORTFOLIO_CONFIG.profile.role}`,
+    title: `${PORTFOLIO_CONFIG.profile.name} · ${PORTFOLIO_CONFIG.profile.role}`,
     description: PORTFOLIO_CONFIG.profile.tagline,
   },
   robots: {

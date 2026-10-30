@@ -21,15 +21,15 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   if (!project) {
     return {
-      title: `Project Not Found — ${PORTFOLIO_CONFIG.profile.name}`,
+      title: `Project Not Found · ${PORTFOLIO_CONFIG.profile.name}`,
     };
   }
 
   return {
-    title: `${project.title} — Case Study by ${PORTFOLIO_CONFIG.profile.name}`,
+    title: `${project.title} · Case Study by ${PORTFOLIO_CONFIG.profile.name}`,
     description: project.summary,
     openGraph: {
-      title: `${project.title} — ${project.category}`,
+      title: `${project.title} · ${project.category}`,
       description: project.summary,
       url: `https://psasare.dev/projects/${project.slug}`,
     },

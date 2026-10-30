@@ -42,7 +42,7 @@ export const DeviceMockup: React.FC<DeviceMockupProps> = ({ project }) => {
 };
 
 /* -------------------------------------------------------------
- * 1. iPhone 16 Pro Frame (MindBridge — Mental Health Navigator)
+ * 1. iPhone 16 Pro Frame (MindBridge: Mental Health Navigator)
  * ------------------------------------------------------------- */
 const IPhoneMockup: React.FC<{ project: Project }> = ({ project }) => {
   return (
