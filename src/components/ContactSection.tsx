@@ -72,13 +72,15 @@ export const ContactSection: React.FC = () => {
                 )}
               </button>
 
-              <a
-                href={`mailto:${PORTFOLIO_CONFIG.profile.altEmail}`}
-                className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] px-3 py-2 text-white/50 hover:text-white/80 transition-all no-underline"
-              >
-                <Mail size={12} />
-                <span>Backup: {PORTFOLIO_CONFIG.profile.altEmail}</span>
-              </a>
+              {PORTFOLIO_CONFIG.profile.altEmail && (
+                <a
+                  href={`mailto:${PORTFOLIO_CONFIG.profile.altEmail}`}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] px-3 py-2 text-white/50 hover:text-white/80 transition-all no-underline"
+                >
+                  <Mail size={12} />
+                  <span>Backup: {PORTFOLIO_CONFIG.profile.altEmail}</span>
+                </a>
+              )}
             </div>
           </div>
 
