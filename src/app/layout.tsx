@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: `${PORTFOLIO_CONFIG.profile.name} · ${PORTFOLIO_CONFIG.profile.role}`,
-  description: `${PORTFOLIO_CONFIG.profile.tagline} Final-year Computer Science candidate building resilient AI and offline-first healthcare systems in Ghana.`,
+  description: `${PORTFOLIO_CONFIG.profile.tagline} BSc Computer Science (Second Class Upper Honours), University of Ghana. Building resilient distributed systems and offline-first software in Ghana.`,
   keywords: [
     'Prosper Shaibu Asare',
     'Prosper Asare',

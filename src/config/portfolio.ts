@@ -64,12 +64,18 @@ export const PORTFOLIO_CONFIG = {
     role: 'Software Engineer & Creative Technologist',
     tagline: 'I build software that solves real problems in Ghana.',
     subheadline:
-      'Final-year Computer Science candidate. Crafting calm, resilient digital systems at the intersection of AI, healthcare infrastructure, and human dignity.',
+      'BSc Computer Science (Second Class Upper Honours), University of Ghana. Crafting calm, resilient digital systems at the intersection of AI, healthcare infrastructure, and human dignity.',
     location: 'Ho, Ghana',
     timezone: 'Africa/Accra',
     email: 'asareprosper143@gmail.com',
     altEmail: undefined,
     availability: 'Available for high-impact software engineering roles & research fellowships',
+    education: {
+      degree: 'BSc Computer Science',
+      institution: 'University of Ghana',
+      honours: 'Second Class Honours (Upper Division)',
+      location: 'Legon, Accra · Ho, Ghana',
+    },
     social: {
       github: 'https://github.com/Psasare',
       linkedin: 'https://www.linkedin.com/in/prosper-shaibu-asare-284244339',

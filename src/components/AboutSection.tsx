@@ -46,9 +46,9 @@ export const AboutSection: React.FC = () => {
                   <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)] font-semibold">ACADEMIC FOUNDATION</span>
                 </div>
                 <h4 className="font-display text-base font-bold text-[var(--text-primary)]">BSc Computer Science</h4>
-                <p className="font-sans text-xs text-[var(--text-secondary)] mt-1">Ho, Ghana</p>
+                <p className="font-sans text-xs text-[var(--text-secondary)] mt-1">University of Ghana</p>
                 <span className="inline-block mt-2.5 text-[11px] font-mono text-apple-emerald bg-apple-emerald/10 border border-apple-emerald/20 px-2.5 py-0.5 rounded-full font-semibold">
-                  First Class Honours Track
+                  Second Class Honours (Upper Division)
                 </span>
               </div>
 
