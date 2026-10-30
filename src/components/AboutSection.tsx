@@ -13,12 +13,12 @@ export const AboutSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-azure mb-4">
-            <Terminal size={14} className="text-apple-azure" />
-            <span>BACKGROUND &amp; SKILLS</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-mono tracking-[0.2em] uppercase bg-apple-azure/10 text-apple-azure border border-apple-azure/20 mb-5 font-semibold">
+            <Terminal size={13} className="text-apple-azure" />
+            <span>BACKGROUND &amp; PHILOSOPHY</span>
           </div>
-          <h2 className="font-display fluid-section-title font-bold tracking-tight text-[var(--text-primary)]">
-            Driven by curiosity. Grounded by purpose.
+          <h2 className="font-display fluid-section-title font-extrabold tracking-tight text-[var(--text-primary)]">
+            Curiosity in theory. <span className="bg-gradient-to-r from-apple-azure via-cyan-400 to-apple-emerald bg-clip-text text-transparent">Ground reality in practice.</span>
           </h2>
         </div>
 
@@ -40,26 +40,26 @@ export const AboutSection: React.FC = () => {
 
             {/* Academic Highlights & Accolades */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="rounded-2xl glass-panel p-5 border-[var(--border-subtle)]">
+              <div className="rounded-2xl glass-panel p-5 border border-[var(--border-subtle)] hover:border-apple-azure/40 transition-colors">
                 <div className="flex items-center gap-3 mb-2 text-apple-azure">
                   <GraduationCap size={20} />
-                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)]">EDUCATION</span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)] font-semibold">ACADEMIC FOUNDATION</span>
                 </div>
                 <h4 className="font-display text-base font-bold text-[var(--text-primary)]">BSc Computer Science</h4>
                 <p className="font-sans text-xs text-[var(--text-secondary)] mt-1">Ho, Ghana</p>
-                <span className="inline-block mt-2 text-[11px] font-mono text-apple-emerald bg-apple-emerald/10 px-2 py-0.5 rounded font-semibold">
+                <span className="inline-block mt-2.5 text-[11px] font-mono text-apple-emerald bg-apple-emerald/10 border border-apple-emerald/20 px-2.5 py-0.5 rounded-full font-semibold">
                   First Class Honours Track
                 </span>
               </div>
 
-              <div className="rounded-2xl glass-panel p-5 border-[var(--border-subtle)]">
+              <div className="rounded-2xl glass-panel p-5 border border-[var(--border-subtle)] hover:border-apple-azure/40 transition-colors">
                 <div className="flex items-center gap-3 mb-2 text-apple-azure">
                   <Award size={20} />
-                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)]">RECOGNITION</span>
+                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)] font-semibold">INNOVATION RECOGNITION</span>
                 </div>
                 <h4 className="font-display text-base font-bold text-[var(--text-primary)]">National Healthtech Hackathon</h4>
                 <p className="font-sans text-xs text-[var(--text-secondary)] mt-1">1st Place Winner (Maternal Telemetry System)</p>
-                <span className="inline-block mt-2 text-[11px] font-mono text-apple-azure bg-apple-azure/10 px-2 py-0.5 rounded font-semibold">
+                <span className="inline-block mt-2.5 text-[11px] font-mono text-apple-azure bg-apple-azure/10 border border-apple-azure/20 px-2.5 py-0.5 rounded-full font-semibold">
                   Final-Year Capstone Honors
                 </span>
               </div>
@@ -69,7 +69,7 @@ export const AboutSection: React.FC = () => {
           {/* Right Column: Visual Card + Interactive Skills Matrix */}
           <div className="lg:col-span-5 flex flex-col gap-6">
             {/* Portrait / Identity Glass Card */}
-            <div className="relative rounded-3xl glass-panel p-6 border-[var(--border-subtle)] overflow-hidden shadow-xl">
+            <div className="relative rounded-3xl glass-panel p-6 border border-[var(--border-subtle)] overflow-hidden shadow-xl">
               <div className="flex items-center justify-between pb-4 border-b border-[var(--border-subtle)]">
                 <div className="flex items-center gap-3">
                   <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-apple-azure via-blue-600 to-cyan-400 p-[2px] shadow-lg">
@@ -109,7 +109,7 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Interactive Skills Matrix */}
-            <div className="rounded-3xl glass-panel p-6 border-[var(--border-subtle)]">
+            <div className="rounded-3xl glass-panel p-6 border border-[var(--border-subtle)]">
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono uppercase tracking-widest text-apple-azure flex items-center gap-1.5 font-semibold">
                   <Code2 size={13} /> TECHNICAL ARSENAL
@@ -123,10 +123,11 @@ export const AboutSection: React.FC = () => {
                   <button
                     key={skillGroup.category}
                     onClick={() => setActiveCategory(skillGroup.category)}
-                    className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${activeCategory === skillGroup.category
+                    className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                      activeCategory === skillGroup.category
                         ? 'bg-apple-azure text-white shadow-sm'
                         : 'bg-black/[0.03] dark:bg-white/[0.05] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/[0.06] dark:hover:bg-white/10'
-                      }`}
+                    }`}
                   >
                     {skillGroup.category}
                   </button>
@@ -143,7 +144,7 @@ export const AboutSection: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.2, delay: idx * 0.03 }}
-                      className="inline-flex items-center gap-1.5 text-xs rounded-lg bg-black/[0.03] dark:bg-white/[0.06] border border-[var(--border-subtle)] px-3 py-1.5 text-[var(--text-primary)]"
+                      className="inline-flex items-center gap-1.5 text-xs rounded-lg bg-black/[0.03] dark:bg-white/[0.06] border border-[var(--border-subtle)] px-3 py-1.5 text-[var(--text-primary)] font-medium"
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-apple-azure" />
                       {item}

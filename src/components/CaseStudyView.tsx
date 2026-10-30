@@ -51,17 +51,17 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
           >
             <Link
               href="/#projects"
-              className="inline-flex items-center gap-2 text-xs text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors uppercase tracking-widest no-underline"
+              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] bg-black/[0.03] dark:bg-white/[0.04] border border-[var(--border-subtle)] transition-colors uppercase tracking-widest no-underline font-medium"
             >
-              <ArrowLeft size={14} />
-              <span>BACK TO SELECTED WORK</span>
+              <ArrowLeft size={13} />
+              <span>RETURN TO SELECTED WORK</span>
             </Link>
           </motion.div>
 
           {/* Project Title Block (Montserrat Display) */}
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-4 font-mono text-xs">
-              <span className="uppercase tracking-widest text-apple-azure font-medium">
+              <span className="px-2.5 py-0.5 rounded-full bg-apple-azure/10 text-apple-azure border border-apple-azure/20 font-bold uppercase tracking-wider">
                 {project.category}
               </span>
               <span className="h-1 w-1 rounded-full bg-[var(--border-strong)]" />
@@ -92,7 +92,7 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-14 rounded-3xl glass-panel p-6 sm:p-12 lg:p-16 border-[var(--border-subtle)] flex justify-center"
+            className="mt-14 rounded-3xl glass-panel p-6 sm:p-12 lg:p-16 border border-[var(--border-subtle)] flex justify-center shadow-2xl"
           >
             <DeviceMockup project={project} />
           </motion.div>
@@ -104,9 +104,9 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Sticky Sidebar: Metadata (JetBrains Mono & Inter) */}
           <aside className="lg:col-span-4">
-            <div className="lg:sticky lg:top-28 flex flex-col gap-6 rounded-3xl glass-panel p-6 border-[var(--border-subtle)]">
-              <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-azure pb-3 border-b border-[var(--border-subtle)] font-semibold">
-                PROJECT SPECIFICATION
+            <div className="lg:sticky lg:top-28 flex flex-col gap-6 rounded-3xl glass-panel p-6 border border-[var(--border-subtle)]">
+              <span className="text-xs font-mono uppercase tracking-[0.2em] text-apple-azure pb-3 border-b border-[var(--border-subtle)] font-bold">
+                SPECIFICATION MATRIX
               </span>
 
               <div>
@@ -125,12 +125,12 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
               </div>
 
               <div>
-                <span className="text-xs text-[var(--text-tertiary)] font-mono uppercase block mb-2">TECH ARSENAL</span>
+                <span className="text-xs text-[var(--text-tertiary)] font-mono uppercase block mb-2 font-semibold">TECH ARSENAL</span>
                 <div className="flex flex-wrap gap-1.5 font-mono">
                   {project.stack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs rounded-full bg-black/[0.03] dark:bg-white/[0.06] border border-[var(--border-subtle)] px-3 py-1 text-[var(--text-secondary)]"
+                      className="text-xs rounded-full bg-black/[0.03] dark:bg-white/[0.06] border border-[var(--border-subtle)] px-3 py-1 text-[var(--text-secondary)] font-medium"
                     >
                       {tech}
                     </span>
@@ -170,9 +170,11 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
           <main className="lg:col-span-8 flex flex-col gap-16 font-sans">
             {/* 1. Problem Definition */}
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-rose-500 dark:text-rose-400 mb-2 block font-semibold">
-                01 // THE CHALLENGE
-              </span>
+              <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-mono tracking-[0.2em] uppercase bg-rose-500/10 text-rose-500 dark:text-rose-400 border border-rose-500/20 mb-4 font-semibold">
+                <span>01</span>
+                <span className="h-1 w-1 rounded-full bg-rose-500" />
+                <span>THE CHALLENGE</span>
+              </div>
               <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
                 {project.problem.title}
               </h2>
@@ -191,9 +193,11 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
 
             {/* 2. Interactive Before vs After Slider */}
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-apple-azure mb-2 block font-semibold">
-                02 // QUANTIFIABLE OUTCOMES
-              </span>
+              <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-mono tracking-[0.2em] uppercase bg-apple-azure/10 text-apple-azure border border-apple-azure/20 mb-4 font-semibold">
+                <span>02</span>
+                <span className="h-1 w-1 rounded-full bg-apple-azure" />
+                <span>MEASURED IMPACT</span>
+              </div>
               <h2 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-[var(--text-primary)] mb-6">
                 Comparative Performance Delta
               </h2>
@@ -202,9 +206,11 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
 
             {/* 3. The Engineered Solution */}
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-apple-emerald mb-2 block font-semibold">
-                03 // THE SOLUTION
-              </span>
+              <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-mono tracking-[0.2em] uppercase bg-apple-emerald/10 text-apple-emerald border border-apple-emerald/20 mb-4 font-semibold">
+                <span>03</span>
+                <span className="h-1 w-1 rounded-full bg-apple-emerald" />
+                <span>ENGINEERED ARCHITECTURE</span>
+              </div>
               <h2 className="font-display text-2xl md:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
                 {project.solution.title}
               </h2>
@@ -222,10 +228,12 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
             </div>
 
             {/* 4. Systems Architecture Breakdown */}
-            <div className="rounded-3xl glass-panel p-8 border-[var(--border-subtle)]">
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-apple-azure mb-2 block font-semibold">
-                04 // SYSTEMS ARCHITECTURE
-              </span>
+            <div className="rounded-3xl glass-panel p-8 border border-[var(--border-subtle)]">
+              <div className="inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-mono tracking-[0.2em] uppercase bg-apple-azure/10 text-apple-azure border border-apple-azure/20 mb-4 font-semibold">
+                <span>04</span>
+                <span className="h-1 w-1 rounded-full bg-apple-azure" />
+                <span>TECHNICAL DEEP DIVE</span>
+              </div>
               <h3 className="font-display text-2xl font-bold text-[var(--text-primary)] mb-3">{project.architecture.title}</h3>
               <p className="text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">
                 {project.architecture.description}
@@ -250,23 +258,22 @@ export const CaseStudyView: React.FC<{ slug: string }> = ({ slug }) => {
       {/* Next Project Footer Seamless Morph */}
       <footer className="relative w-full border-t border-[var(--border-subtle)] bg-[var(--bg-canvas)] py-24 px-6 md:px-14 lg:px-20 overflow-hidden font-sans transition-colors duration-400">
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-          <span className="text-xs font-mono uppercase tracking-[0.3em] text-[var(--text-tertiary)] mb-3">
-            CONTINUE EXPLORING
-          </span>
-          <h3 className="text-sm text-[var(--text-secondary)] uppercase tracking-widest font-mono">
-            NEXT CASE STUDY (0{nextIndex + 1} / 0{PORTFOLIO_CONFIG.projects.length})
-          </h3>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-mono tracking-[0.2em] uppercase bg-apple-azure/10 text-apple-azure border border-apple-azure/20 mb-5 font-semibold">
+            <span>NEXT CHAPTER</span>
+            <span className="h-1 w-1 rounded-full bg-apple-azure" />
+            <span>0{nextIndex + 1} OF 0{PORTFOLIO_CONFIG.projects.length}</span>
+          </div>
 
-          <Link href={`/projects/${nextProject.slug}`} className="group no-underline my-8">
+          <Link href={`/projects/${nextProject.slug}`} className="group no-underline my-6">
             <h2 className="font-display text-4xl md:text-7xl font-extrabold tracking-tight text-[var(--text-primary)] group-hover:text-apple-azure transition-colors duration-300">
               {nextProject.title} →
             </h2>
-            <p className="font-sans text-sm md:text-lg text-[var(--text-tertiary)] mt-2">{nextProject.tagline}</p>
+            <p className="font-sans text-sm md:text-lg text-[var(--text-tertiary)] mt-3 max-w-xl">{nextProject.tagline}</p>
           </Link>
 
           <MagneticButton href={`/projects/${nextProject.slug}`} strength={0.3} dataCursor="view">
-            <span className="inline-flex items-center gap-2 rounded-full glass-panel px-7 py-3 text-sm font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all font-sans">
-              Load Next Chapter
+            <span className="inline-flex items-center gap-2 rounded-full glass-panel px-7 py-3 text-sm font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all font-sans border border-[var(--border-subtle)]">
+              Explore Case Study
               <ChevronRight size={16} />
             </span>
           </MagneticButton>

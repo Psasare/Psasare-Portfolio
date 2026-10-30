@@ -78,7 +78,7 @@ export const PORTFOLIO_CONFIG = {
   },
 
   about: {
-    lead: 'Great engineering is quiet. In emerging markets, building software is not merely about code—it is about bandwidth resilience, cultural nuance, and zero-downtime architecture when human lives are at stake.',
+    lead: 'Great engineering is quiet. In emerging markets, software engineering transcends code alone: it demands bandwidth resilience, cultural alignment, and zero-downtime reliability when human lives depend on it.',
     storyParagraphs: [
       'Born and raised in Ghana, I have spent my university years bridging classical systems engineering with the ground reality of deploying software across West Africa. I watched modern cloud architectures fail the moment an optic fiber severed or student data bundles expired.',
       'That tension shaped my engineering creed: build full-stack and edge-native systems that respect hardware limits, survive network blackouts, and feel as calm, confident, and precise as an Apple product.',
@@ -119,9 +119,9 @@ export const PORTFOLIO_CONFIG = {
     {
       id: 'bloom',
       slug: 'bloom',
-      title: 'Bloom Maternal Health App',
+      title: 'Bloom Maternal Health',
       category: 'Maternal Healthcare & Telemetry',
-      year: '2025 – 2026',
+      year: '2025 / 2026',
       tagline: 'Offline-first antenatal tracking and pre-eclampsia early warning for district clinics.',
       summary:
         'My final-year capstone project: a clinical-grade maternal monitoring tablet application engineered specifically for midwives and expectant mothers in peri-urban and rural Ghana.',
@@ -145,7 +145,7 @@ export const PORTFOLIO_CONFIG = {
       problem: {
         title: 'Preventable Maternal Complications in District Facilities',
         description:
-          'In peri-urban Ghana, paper-based maternal health records (the yellow Maternal Health Record Book) are routinely lost, water-damaged, or unreadable during critical emergencies. Crucial indicators of pre-eclampsia—like gradual blood pressure spikes and proteinuria—are missed between disjointed clinic visits.',
+          'In peri-urban Ghana, paper-based maternal health records (the yellow Maternal Health Record Book) are routinely lost, water-damaged, or unreadable during critical emergencies. Crucial indicators of pre-eclampsia, including gradual blood pressure spikes and proteinuria, are missed between disjointed clinic visits.',
         points: [
           'Frequent power outages (dumsor) render desktop hospital information systems useless',
           'Paper books provide no algorithmic alerts for non-linear systolic pressure trends',
@@ -185,7 +185,7 @@ export const PORTFOLIO_CONFIG = {
     {
       id: 'mindbridge',
       slug: 'mindbridge',
-      title: 'MindBridge — Mental Health Navigator',
+      title: 'MindBridge: Mental Health Navigator',
       category: 'AI & Mental Health Platform',
       year: '2025',
       tagline: 'Private, culturally attuned mental health triage for Ghanaian tertiary students.',

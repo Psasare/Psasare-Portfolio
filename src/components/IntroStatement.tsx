@@ -14,7 +14,7 @@ export const IntroStatement: React.FC = () => {
   const textRef = useRef<HTMLParagraphElement>(null);
 
   const statement =
-    "Great engineering is quiet. In emerging markets, building software isn't just about code—it's about bandwidth resilience, cultural empathy, and systems that refuse to fail when human lives depend on them.";
+    "Great engineering is quiet. In emerging markets, building software is never just about code: it is about bandwidth resilience, cultural empathy, and systems that refuse to fail when human lives depend on them.";
 
   const words = statement.split(' ');
 
@@ -28,7 +28,7 @@ export const IntroStatement: React.FC = () => {
       gsap.fromTo(
         wordSpans,
         {
-          opacity: 0.18,
+          opacity: 0.16,
           filter: 'blur(3px)',
         },
         {
@@ -61,9 +61,9 @@ export const IntroStatement: React.FC = () => {
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Subtitle Pill (JetBrains Mono) */}
-        <div className="mb-6 inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-azure">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-mono tracking-[0.2em] uppercase bg-apple-azure/10 text-apple-azure border border-apple-azure/20 shadow-sm font-semibold">
           <span className="h-1.5 w-1.5 rounded-full bg-apple-azure" />
-          CORE ENGINEERING CREED
+          <span>ENGINEERING CREED</span>
         </div>
 
         {/* Word-by-Word Scrubbed Paragraph (Montserrat Display) */}
@@ -71,17 +71,32 @@ export const IntroStatement: React.FC = () => {
           ref={textRef}
           className="font-display fluid-statement font-semibold tracking-[-0.025em] leading-[1.3] text-[var(--text-primary)] select-none"
         >
-          {words.map((word, index) => (
-            <span key={index} className="statement-word inline-block mr-[0.28em] transition-all will-change-[opacity,transform,filter]">
-              {word}
-            </span>
-          ))}
+          {words.map((word, index) => {
+            const isHighlight =
+              word.includes('bandwidth') ||
+              word.includes('resilience') ||
+              word.includes('cultural') ||
+              word.includes('empathy');
+
+            return (
+              <span
+                key={index}
+                className={`statement-word inline-block mr-[0.28em] transition-all will-change-[opacity,transform,filter] ${
+                  isHighlight ? 'text-apple-azure font-bold' : ''
+                }`}
+              >
+                {word}
+              </span>
+            );
+          })}
         </p>
 
         {/* Context Signature (Inter + JetBrains Mono) */}
         <div className="mt-12 flex items-center justify-center gap-3 text-sm text-[var(--text-tertiary)] font-sans">
           <span className="h-px w-10 bg-[var(--border-subtle)]" />
-          <span>{PORTFOLIO_CONFIG.profile.name} · <span className="font-mono text-xs">{PORTFOLIO_CONFIG.profile.location}</span></span>
+          <span>
+            {PORTFOLIO_CONFIG.profile.name} <span className="mx-1 text-apple-azure">/</span> <span className="font-mono text-xs">{PORTFOLIO_CONFIG.profile.location}</span>
+          </span>
           <span className="h-px w-10 bg-[var(--border-subtle)]" />
         </div>
       </div>

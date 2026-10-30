@@ -66,17 +66,20 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3 font-mono">
-              <span className="text-xs tracking-widest uppercase text-apple-azure font-medium">
+              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-apple-azure/10 text-apple-azure border border-apple-azure/20 font-bold">
+                0{index + 1}
+              </span>
+              <span className="text-xs tracking-widest uppercase text-apple-azure font-semibold">
                 {project.category}
               </span>
               <span className="h-1 w-1 rounded-full bg-[var(--border-strong)]" />
               <span className="text-xs text-[var(--text-tertiary)]">{project.year}</span>
             </div>
 
-            <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)]">
+            <h3 className="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)]">
               {project.title}
             </h3>
-            <p className="font-sans mt-2 text-base md:text-xl text-[var(--text-secondary)] max-w-2xl font-normal leading-relaxed">
+            <p className="font-sans mt-3 text-base md:text-xl text-[var(--text-secondary)] max-w-2xl font-normal leading-relaxed">
               {project.tagline}
             </p>
           </div>
@@ -101,7 +104,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
         <div
           ref={visualRef}
           data-cursor="view"
-          className="relative w-full rounded-[32px] glass-panel p-6 md:p-12 lg:p-14 overflow-hidden border-[var(--border-subtle)] group transition-all"
+          className="relative w-full rounded-[32px] glass-panel p-6 md:p-12 lg:p-14 overflow-hidden border border-[var(--border-subtle)] group transition-all"
         >
           {/* Ambient Glass Highlight */}
           <div
@@ -121,7 +124,7 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
             {/* Right: Key Quantitative Metrics & Tech Architecture */}
             <div className="lg:col-span-5 flex flex-col justify-between gap-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)] block mb-2">
+                <span className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)] block mb-2 font-semibold">
                   MEASURED IMPACT
                 </span>
                 <p className="font-sans text-sm md:text-base text-[var(--text-secondary)] leading-relaxed">
@@ -132,13 +135,19 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
               {/* Animated Counters Grid (JetBrains Mono) */}
               <div className="grid grid-cols-2 gap-4">
                 {project.metrics.map((metric, i) => (
-                  <MetricCard key={i} metric={metric} isInView={isInView} delay={i * 0.1} />
+                  <MetricCard
+                    key={i}
+                    metric={metric}
+                    accentColor={project.accentColor}
+                    isInView={isInView}
+                    delay={i * 0.1}
+                  />
                 ))}
               </div>
 
               {/* Stack Pills (JetBrains Mono) */}
               <div className="pt-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--text-tertiary)] block mb-2">
+                <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--text-tertiary)] block mb-2 font-semibold">
                   ENGINEERING STACK
                 </span>
                 <div className="flex flex-wrap gap-1.5 font-mono">
@@ -171,11 +180,12 @@ export const ProjectCard: React.FC<{ project: Project; index: number }> = ({ pro
 /* -------------------------------------------------------------
  * Animated Counter HUD Component (JetBrains Mono)
  * ------------------------------------------------------------- */
-const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: string }; isInView: boolean; delay: number }> = ({
-  metric,
-  isInView,
-  delay,
-}) => {
+const MetricCard: React.FC<{
+  metric: { label: string; value: string; unit?: string };
+  accentColor: string;
+  isInView: boolean;
+  delay: number;
+}> = ({ metric, accentColor, isInView, delay }) => {
   const [count, setCount] = useState(0);
 
   // Parse numeric portion if valid
@@ -209,14 +219,20 @@ const MetricCard: React.FC<{ metric: { label: string; value: string; unit?: stri
   }, [isInView, rawNumber, isNumeric, delay]);
 
   return (
-    <div className="rounded-2xl bg-black/[0.02] dark:bg-white/[0.03] border border-[var(--border-subtle)] p-3.5 hover:border-[var(--border-strong)] transition-all font-mono">
+    <div className="relative rounded-2xl bg-black/[0.02] dark:bg-white/[0.03] border border-[var(--border-subtle)] p-4 hover:border-[var(--border-strong)] transition-all font-mono overflow-hidden group">
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px] opacity-70 group-hover:opacity-100 transition-opacity"
+        style={{ backgroundColor: accentColor }}
+      />
       <div className="flex items-baseline gap-1">
         <span className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] tracking-tight">
           {isNumeric ? count.toLocaleString() : metric.value}
         </span>
         {metric.unit && <span className="text-sm font-semibold text-apple-azure">{metric.unit}</span>}
       </div>
-      <span className="text-xs text-[var(--text-secondary)] block mt-1 leading-tight font-sans">{metric.label}</span>
+      <span className="text-xs text-[var(--text-secondary)] block mt-1.5 leading-tight font-sans font-medium">
+        {metric.label}
+      </span>
     </div>
   );
 };

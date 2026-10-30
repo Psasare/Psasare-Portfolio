@@ -31,17 +31,17 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto flex flex-col justify-between min-h-[60vh]">
         {/* Top Callout */}
         <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 rounded-full glass-pill px-4 py-1.5 border-[var(--border-subtle)] text-xs font-mono text-apple-emerald mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 border border-apple-emerald/25 bg-apple-emerald/10 text-xs font-mono text-apple-emerald mb-6 shadow-sm">
             <span className="h-2 w-2 rounded-full bg-apple-emerald animate-pulse" />
-            <span className="font-semibold">OPEN FOR FULL-TIME ROLES &amp; VENTURE COLLABORATIONS</span>
+            <span className="font-semibold tracking-wider">OPEN FOR ENGINEERING ROLES &amp; FELLOWSHIPS</span>
           </div>
 
-          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text-primary)] max-w-3xl">
-            Have an ambitious system to build? Let&apos;s talk.
+          <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--text-primary)] max-w-3xl">
+            Have an ambitious system to build? <span className="bg-gradient-to-r from-apple-azure to-cyan-400 bg-clip-text text-transparent">Let us talk.</span>
           </h2>
 
-          <p className="font-sans mt-4 text-base md:text-xl text-[var(--text-secondary)] max-w-xl leading-relaxed">
-            Currently accepting software engineering interviews, graduate research fellowships, and high-impact software contracts.
+          <p className="font-sans mt-5 text-base md:text-xl text-[var(--text-secondary)] max-w-xl leading-relaxed">
+            Currently accepting software engineering interviews, research fellowships, and high-impact software contracts worldwide.
           </p>
 
           {/* Huge Magnetic Email Link (Montserrat Display) */}
@@ -57,7 +57,7 @@ export const ContactSection: React.FC = () => {
             <div className="flex flex-wrap items-center justify-center gap-3 font-mono text-xs">
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2 rounded-full bg-black/[0.03] dark:bg-white/[0.06] hover:bg-black/[0.06] dark:hover:bg-white/[0.12] border border-[var(--border-subtle)] px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full bg-black/[0.03] dark:bg-white/[0.06] hover:bg-black/[0.06] dark:hover:bg-white/[0.12] border border-[var(--border-subtle)] px-4 py-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all shadow-sm font-medium"
               >
                 {copied ? (
                   <>
@@ -87,7 +87,7 @@ export const ContactSection: React.FC = () => {
           {/* Social Links (Inter) */}
           <div className="mt-14 flex flex-wrap items-center justify-center gap-4 font-sans">
             <MagneticButton href={PORTFOLIO_CONFIG.profile.social.github} strength={0.3}>
-              <span className="inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-xs font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all">
+              <span className="inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-xs font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all border border-[var(--border-subtle)]">
                 <Github size={15} />
                 GitHub
                 <ArrowUpRight size={13} className="text-[var(--text-tertiary)]" />
@@ -95,7 +95,7 @@ export const ContactSection: React.FC = () => {
             </MagneticButton>
 
             <MagneticButton href={PORTFOLIO_CONFIG.profile.social.linkedin} strength={0.3}>
-              <span className="inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-xs font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all">
+              <span className="inline-flex items-center gap-2 rounded-full glass-panel px-5 py-2.5 text-xs font-semibold text-[var(--text-primary)] hover:bg-black/[0.04] dark:hover:bg-white/10 transition-all border border-[var(--border-subtle)]">
                 <Linkedin size={15} />
                 LinkedIn
                 <ArrowUpRight size={13} className="text-[var(--text-tertiary)]" />

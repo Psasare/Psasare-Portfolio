@@ -12,26 +12,26 @@ export const CapabilitiesGrid: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-apple-azure mb-4">
-            <Cpu size={14} className="text-apple-azure" />
-            <span>ARCHITECTURAL PHILOSOPHY &amp; SYSTEM SPECS</span>
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-mono tracking-[0.2em] uppercase bg-apple-azure/10 text-apple-azure border border-apple-azure/20 mb-5 font-semibold">
+            <Cpu size={13} className="text-apple-azure" />
+            <span>ARCHITECTURAL PHILOSOPHY</span>
           </div>
-          <h2 className="font-display fluid-section-title font-bold tracking-tight text-[var(--text-primary)]">
-            Engineered for hostile network conditions.
+          <h2 className="font-display fluid-section-title font-extrabold tracking-tight text-[var(--text-primary)] max-w-3xl">
+            Resilience by design. <span className="bg-gradient-to-r from-apple-azure via-cyan-400 to-apple-emerald bg-clip-text text-transparent">Not by coincidence.</span>
           </h2>
           <p className="font-sans mt-4 text-base md:text-lg text-[var(--text-secondary)] leading-relaxed">
-            Building software in emerging markets requires rethinking cloud assumptions. Every application I design prioritizes zero-data survivability, local-first data integrity, and extreme UI responsiveness.
+            Software across emerging markets cannot assume uninterrupted fiber or unlimited cellular bundles. Every architecture is engineered around offline survival, deterministic fallbacks, and immediate user feedback.
           </p>
         </div>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Bento Item 1: Interactive Network Latency Simulator */}
-          <div className="md:col-span-2 rounded-3xl glass-panel p-8 md:p-10 flex flex-col justify-between border-[var(--border-subtle)] relative overflow-hidden">
+          <div className="md:col-span-2 rounded-3xl glass-panel p-8 md:p-10 flex flex-col justify-between border border-[var(--border-subtle)] relative overflow-hidden">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
-                <span className="text-xs font-mono uppercase tracking-widest text-apple-azure">
-                  LIVE ARCHITECTURE SIMULATOR
+                <span className="text-xs font-mono uppercase tracking-widest text-apple-azure font-semibold">
+                  LIVE BENCHMARK SIMULATOR
                 </span>
                 <h3 className="font-display text-2xl font-bold text-[var(--text-primary)] mt-1">Bandwidth Resilience Engine</h3>
               </div>
@@ -40,7 +40,7 @@ export const CapabilitiesGrid: React.FC = () => {
               <div className="flex rounded-full bg-black/5 dark:bg-black/60 p-1 border border-[var(--border-subtle)] self-start font-mono">
                 <button
                   onClick={() => setNetworkMode('2g')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                     networkMode === '2g'
                       ? 'bg-apple-azure text-white shadow-md'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -51,7 +51,7 @@ export const CapabilitiesGrid: React.FC = () => {
                 </button>
                 <button
                   onClick={() => setNetworkMode('5g')}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs transition-all ${
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all ${
                     networkMode === '5g'
                       ? 'bg-apple-azure text-white shadow-md'
                       : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
@@ -98,9 +98,9 @@ export const CapabilitiesGrid: React.FC = () => {
           </div>
 
           {/* Bento Item 2: Local-First CRDTs */}
-          <div className="rounded-3xl glass-panel p-8 flex flex-col justify-between border-[var(--border-subtle)]">
+          <div className="rounded-3xl glass-panel p-8 flex flex-col justify-between border border-[var(--border-subtle)]">
             <div>
-              <div className="h-10 w-10 rounded-2xl bg-black/[0.04] dark:bg-white/[0.06] border border-[var(--border-subtle)] flex items-center justify-center text-apple-azure mb-5">
+              <div className="h-11 w-11 rounded-2xl bg-gradient-to-tr from-apple-emerald/10 to-teal-400/10 border border-apple-emerald/20 flex items-center justify-center text-apple-emerald mb-5 shadow-sm">
                 <Database size={20} />
               </div>
               <span className="text-xs font-mono uppercase tracking-widest text-apple-emerald font-semibold">
@@ -118,9 +118,9 @@ export const CapabilitiesGrid: React.FC = () => {
           </div>
 
           {/* Bento Item 3: On-Device & Edge AI */}
-          <div className="rounded-3xl glass-panel p-8 flex flex-col justify-between border-[var(--border-subtle)]">
+          <div className="rounded-3xl glass-panel p-8 flex flex-col justify-between border border-[var(--border-subtle)]">
             <div>
-              <div className="h-10 w-10 rounded-2xl bg-black/[0.04] dark:bg-white/[0.06] border border-[var(--border-subtle)] flex items-center justify-center text-apple-azure mb-5">
+              <div className="h-11 w-11 rounded-2xl bg-gradient-to-tr from-apple-azure/10 to-cyan-400/10 border border-apple-azure/20 flex items-center justify-center text-apple-azure mb-5 shadow-sm">
                 <Zap size={20} />
               </div>
               <span className="text-xs font-mono uppercase tracking-widest text-apple-azure font-semibold">
@@ -138,13 +138,13 @@ export const CapabilitiesGrid: React.FC = () => {
           </div>
 
           {/* Bento Item 4: Accessible & Kinetic Motion */}
-          <div className="md:col-span-2 rounded-3xl glass-panel p-8 md:p-10 flex flex-col justify-between border-[var(--border-subtle)]">
+          <div className="md:col-span-2 rounded-3xl glass-panel p-8 md:p-10 flex flex-col justify-between border border-[var(--border-subtle)]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <div className="h-10 w-10 rounded-2xl bg-black/[0.04] dark:bg-white/[0.06] border border-[var(--border-subtle)] flex items-center justify-center text-[var(--text-primary)] mb-5">
+                <div className="h-11 w-11 rounded-2xl bg-gradient-to-tr from-purple-500/10 to-indigo-500/10 border border-purple-500/20 flex items-center justify-center text-purple-500 mb-5 shadow-sm">
                   <Smartphone size={20} />
                 </div>
-                <span className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)]">
+                <span className="text-xs font-mono uppercase tracking-widest text-purple-500 font-semibold">
                   DESIGN SYSTEM
                 </span>
                 <h3 className="font-display text-xl font-bold text-[var(--text-primary)] mt-1">Calm, Confident Interfaces</h3>
