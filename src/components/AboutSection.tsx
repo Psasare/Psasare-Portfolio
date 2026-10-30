@@ -123,11 +123,10 @@ export const AboutSection: React.FC = () => {
                   <button
                     key={skillGroup.category}
                     onClick={() => setActiveCategory(skillGroup.category)}
-                    className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
-                      activeCategory === skillGroup.category
+                    className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${activeCategory === skillGroup.category
                         ? 'bg-apple-azure text-white shadow-sm'
                         : 'bg-black/[0.03] dark:bg-white/[0.05] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-black/[0.06] dark:hover:bg-white/10'
-                    }`}
+                      }`}
                   >
                     {skillGroup.category}
                   </button>
