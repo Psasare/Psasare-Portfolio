@@ -8,6 +8,7 @@ interface SoundContextType {
   playClickSound: () => void;
   playHoverSound: () => void;
   playSuccessSound: () => void;
+  playThemeSound: (toLight: boolean) => void;
 }
 
 const SoundContext = createContext<SoundContextType>({
@@ -16,6 +17,7 @@ const SoundContext = createContext<SoundContextType>({
   playClickSound: () => {},
   playHoverSound: () => {},
   playSuccessSound: () => {},
+  playThemeSound: () => {},
 });
 
 export const useSound = () => useContext(SoundContext);
@@ -126,8 +128,35 @@ export const SoundProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   };
 
+  const playThemeSound = (toLight: boolean) => {
+    if (isMuted) return;
+    try {
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const frequencies = toLight ? [523.25, 783.99] : [783.99, 440.0];
+
+      frequencies.forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + i * 0.06);
+        gain.gain.setValueAtTime(0.025, now + i * 0.06);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.06 + 0.14);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now + i * 0.06);
+        osc.stop(now + i * 0.06 + 0.15);
+      });
+    } catch {
+      // AudioContext policy suppression fallback
+    }
+  };
+
   return (
-    <SoundContext.Provider value={{ isMuted, toggleSound, playClickSound, playHoverSound, playSuccessSound }}>
+    <SoundContext.Provider
+      value={{ isMuted, toggleSound, playClickSound, playHoverSound, playSuccessSound, playThemeSound }}
+    >
       {children}
     </SoundContext.Provider>
   );

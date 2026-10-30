@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'Next.js',
     'GSAP',
     'Three.js',
-    'MindBridge AI',
+    'MindBridge - Mental Health Navigator Mobile App for Tertiary Students',
     'Bloom Maternal Health App',
     'Course Registration System',
     'Library Management System',
