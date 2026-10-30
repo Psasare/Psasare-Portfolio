@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PORTFOLIO_CONFIG } from '@/config/portfolio';
-import { GraduationCap, Award, MapPin, Terminal, Code2 } from 'lucide-react';
+import { GraduationCap, MapPin, Terminal, Code2 } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState(PORTFOLIO_CONFIG.skills[0].category);
@@ -38,30 +38,25 @@ export const AboutSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Academic Highlights & Accolades */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-              <div className="rounded-2xl glass-panel p-5 border border-[var(--border-subtle)] hover:border-apple-azure/40 transition-colors">
-                <div className="flex items-center gap-3 mb-2 text-apple-azure">
-                  <GraduationCap size={20} />
-                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)] font-semibold">ACADEMIC FOUNDATION</span>
+            {/* Academic Foundation Card */}
+            <div className="pt-2">
+              <div className="rounded-2xl glass-panel p-6 border border-[var(--border-subtle)] hover:border-apple-azure/40 transition-all duration-300">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div>
+                    <div className="flex items-center gap-2.5 mb-2 text-apple-azure">
+                      <GraduationCap size={18} />
+                      <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)] font-semibold">ACADEMIC FOUNDATION</span>
+                    </div>
+                    <h4 className="font-display text-lg font-bold text-[var(--text-primary)]">BSc Computer Science</h4>
+                    <p className="font-sans text-sm text-[var(--text-secondary)] mt-0.5">University of Ghana</p>
+                  </div>
+                  <div className="sm:self-center">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-mono text-apple-emerald bg-apple-emerald/10 border border-apple-emerald/20 px-3.5 py-1.5 rounded-full font-semibold">
+                      <span className="h-1.5 w-1.5 rounded-full bg-apple-emerald" />
+                      Second Class Honours (Upper Division)
+                    </span>
+                  </div>
                 </div>
-                <h4 className="font-display text-base font-bold text-[var(--text-primary)]">BSc Computer Science</h4>
-                <p className="font-sans text-xs text-[var(--text-secondary)] mt-1">University of Ghana</p>
-                <span className="inline-block mt-2.5 text-[11px] font-mono text-apple-emerald bg-apple-emerald/10 border border-apple-emerald/20 px-2.5 py-0.5 rounded-full font-semibold">
-                  Second Class Honours (Upper Division)
-                </span>
-              </div>
-
-              <div className="rounded-2xl glass-panel p-5 border border-[var(--border-subtle)] hover:border-apple-azure/40 transition-colors">
-                <div className="flex items-center gap-3 mb-2 text-apple-azure">
-                  <Award size={20} />
-                  <span className="text-xs font-mono uppercase tracking-wider text-[var(--text-tertiary)] font-semibold">INNOVATION RECOGNITION</span>
-                </div>
-                <h4 className="font-display text-base font-bold text-[var(--text-primary)]">National Healthtech Hackathon</h4>
-                <p className="font-sans text-xs text-[var(--text-secondary)] mt-1">1st Place Winner (Maternal Telemetry System)</p>
-                <span className="inline-block mt-2.5 text-[11px] font-mono text-apple-azure bg-apple-azure/10 border border-apple-azure/20 px-2.5 py-0.5 rounded-full font-semibold">
-                  Final-Year Capstone Honors
-                </span>
               </div>
             </div>
           </div>
